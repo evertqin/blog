@@ -1,0 +1,668 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Technology,Javascript,ReactJS," />
+
+
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="Qin" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="I am doing a new project recently so I am trying to follow the react.js tutorial and make use of this new technology in my project. It is claimed that the concept of react.js is fondamentally differen">
+<meta name="keywords" content="Technology,Javascript,ReactJS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React.js Study Note (1)">
+<meta property="og:url" content="https://evertqin.github.io/blog/2015/09/24/post20/index.html">
+<meta property="og:site_name" content="Qin">
+<meta property="og:description" content="I am doing a new project recently so I am trying to follow the react.js tutorial and make use of this new technology in my project. It is claimed that the concept of react.js is fondamentally differen">
+<meta property="og:image" content="http://i1-news.softpedia-static.com/images/news2/Basic-Differences-Between-AngularJS-and-React-484781-2.jpg">
+<meta property="og:updated_time" content="2017-06-23T21:41:54.087Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React.js Study Note (1)">
+<meta name="twitter:description" content="I am doing a new project recently so I am trying to follow the react.js tutorial and make use of this new technology in my project. It is claimed that the concept of react.js is fondamentally differen">
+<meta name="twitter:image" content="http://i1-news.softpedia-static.com/images/news2/Basic-Differences-Between-AngularJS-and-React-484781-2.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://evertqin.github.io/blog/2015/09/24/post20/"/>
+
+
+
+
+
+  <title>React.js Study Note (1) | Qin</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Qin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://evertqin.github.io/blog/blog/2015/09/24/post20/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="R Qin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">React.js Study Note (1)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-09-24T00:00:00-04:00">
+                2015-09-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>I am doing a new project recently so I am trying to follow the react.js tutorial and make use of this new technology in my project. It is claimed that the concept of react.js is fondamentally different from AngularJS. For example AngularJS is a full MVC framework but ReactJS is only the View of the MVC. The following figure demonstrated the whole concept.</p>
+<a id="more"></a>
+<p><img src="http://i1-news.softpedia-static.com/images/news2/Basic-Differences-Between-AngularJS-and-React-484781-2.jpg" alt="Compare AngularJS with ReactJS"></p>
+<p>I will add other things from time to time</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;content&quot;&gt;</div><div class="line">  &lt;div id=&quot;pageTitle&quot; class=&quot;container&quot;&gt;</div><div class="line">    &lt;div class=&quot;row&quot;&gt;</div><div class="line">      &lt;div class=&quot;col-md-3&quot;&gt;</div><div class="line">        &lt;div id=&quot;leftlist&quot;&gt;&lt;/div&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line">(function ($) &#123;</div><div class="line">    var NamesList = React.createClass(&#123;</div><div class="line">        render: function () &#123;</div><div class="line">            var namesList = this.props.names.map(function (name) &#123;</div><div class="line">                return (</div><div class="line">                    &lt;li&gt;</div><div class="line">                        &lt;a&gt;&#123;name.YLabel&#125;&lt;/a&gt;</div><div class="line">                    &lt;/li&gt;</div><div class="line">                    );</div><div class="line">            &#125;);</div><div class="line"></div><div class="line">            return (</div><div class="line">                &lt;ul className=&quot;namesList&quot;&gt;</div><div class="line">                    &#123;namesList&#125;</div><div class="line">                &lt;/ul&gt;</div><div class="line">                );</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    var LeftListBox = React.createClass(&#123;</div><div class="line">        getInitialState: function () &#123;</div><div class="line">          return &#123; names: [ &#123;YLabel:&quot;Test1&quot;&#125;,</div><div class="line">             &#123;YLabel:&quot;Test2&quot;&#125; ]&#125;;</div><div class="line">        &#125;,</div><div class="line">        componentDidMount: function () &#123;</div><div class="line">            $.ajax(&#123;</div><div class="line">                url: this.props.url,</div><div class="line">                dataType: &apos;json&apos;,</div><div class="line">                cache: false,</div><div class="line">                success: function (names) &#123;</div><div class="line">                    this.setState(&#123; names: names &#125;);</div><div class="line">                &#125;.bind(this),</div><div class="line">                error: function (xhr, status, err) &#123;</div><div class="line">                    console.error(this.props.url, status, err.toString());</div><div class="line">                &#125;.bind(this),</div><div class="line">            &#125;);</div><div class="line">        &#125;,</div><div class="line">        render: function () &#123;</div><div class="line">            return (</div><div class="line">                &lt;div className=&quot;leftListBox&quot;&gt;</div><div class="line">                    &lt;NamesList names=&#123;this.state.names&#125;&gt;&lt;/NamesList&gt;</div><div class="line">                &lt;/div&gt;</div><div class="line">                );</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;);</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">    var url = &apos;Plot/AggregatedPlotHandler.ashx?name=all&apos;;</div><div class="line">    React.render(</div><div class="line">      &lt;LeftListBox url=&#123;url&#125;&gt;Sample&lt;/LeftListBox&gt;,</div><div class="line">      document.getElementById(&apos;leftlist&apos;)</div><div class="line">    );</div><div class="line">&#125;)(jQuery);</div></pre></td></tr></table></figure>
+<p>This is modified from tutorial. I am creating a list by making ajax request to a endpoint with querystring. The return is an array of objects. <code>getInitialState</code> helps us setup the default this.state value. <code>componentDidMount</code> , according to the official document:</p>
+<p><em>Invoked once, only on the client (not on the server), immediately after the initial rendering occurs. At this point in the lifecycle, the component has a DOM representation which you can access via React.findDOMNode(this). The componentDidMount() method of child components is invoked before that of parent components.</em></p>
+<p><em>If you want to integrate with other JavaScript frameworks, set timers using setTimeout or setInterval, or send AJAX requests, perform those operations in this method.</em></p>
+<p>Data binding is somewhat similar to AngularJS, you bind by assigning curly bracket to variable directly. Whereas in angular, you can use ng-bind or directly use double curly bracket.</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/Technology/" rel="tag"># Technology</a>
+          
+            <a href="/blog/tags/Javascript/" rel="tag"># Javascript</a>
+          
+            <a href="/blog/tags/ReactJS/" rel="tag"># ReactJS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2015/08/26/post19/" rel="next" title="AngularJS Study Note -- ngView and ngRoute(3)">
+                <i class="fa fa-chevron-left"></i> AngularJS Study Note -- ngView and ngRoute(3)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2015/10/01/post22/" rel="prev" title="React.js Study Note (2) - Making a simple dynamic router">
+                React.js Study Note (2) - Making a simple dynamic router <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/blog/images/avatar.gif"
+               alt="R Qin" />
+          <p class="site-author-name" itemprop="name">R Qin</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/blog/archives/">
+                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">Tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/blog/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">R Qin</span>
+</div>
+
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

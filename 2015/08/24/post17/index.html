@@ -1,0 +1,699 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Technology,AngularJS,Javascript," />
+
+
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="Qin" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="I have been learning AngularJS recently. Although people say Angular might be okay for small scale websites, it becomes very slow as the website grow larger. Many people turn to React.js for better pe">
+<meta name="keywords" content="Technology,AngularJS,Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AngularJS Study Note (1)">
+<meta property="og:url" content="https://evertqin.github.io/blog/2015/08/24/post17/index.html">
+<meta property="og:site_name" content="Qin">
+<meta property="og:description" content="I have been learning AngularJS recently. Although people say Angular might be okay for small scale websites, it becomes very slow as the website grow larger. Many people turn to React.js for better pe">
+<meta property="og:updated_time" content="2017-06-23T21:41:11.007Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AngularJS Study Note (1)">
+<meta name="twitter:description" content="I have been learning AngularJS recently. Although people say Angular might be okay for small scale websites, it becomes very slow as the website grow larger. Many people turn to React.js for better pe">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://evertqin.github.io/blog/2015/08/24/post17/"/>
+
+
+
+
+
+  <title>AngularJS Study Note (1) | Qin</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Qin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://evertqin.github.io/blog/blog/2015/08/24/post17/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="R Qin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">AngularJS Study Note (1)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-08-24T00:00:00-04:00">
+                2015-08-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>I have been learning AngularJS recently. Although people say Angular might be okay for small scale websites, it becomes very slow as the website grow larger. Many people turn to React.js for better performace. But I do think it<br>is useful to learn the concept of Angular since it has been there for quite a while and there are a lot of cool concepts.</p>
+<a id="more"></a>
+<ol>
+<li><p>Terminologies</p>
+<p> At a high level, directives are markers on a DOM element (such as an attribute, element name, comment or CSS class) that tell AngularJS’s HTML compiler ($compile) to attach a specified behavior to that DOM element or even transform the DOM element and its children.(<a href="https://docs.angularjs.org/guide/directive" target="_blank" rel="external">From Angular document</a>)</p>
+<p> There are several important built-in angular directives (ngApp, npBind, ngController, etc). You will know ngApp and ng-app are basically same thing because angular always covert to camelcase.</p>
+</li>
+<li><p>Baby Step</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;html ng-app&gt;</div><div class="line">  &lt;head&gt;</div><div class="line">    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.js&quot;&gt;&lt;/script&gt;</div><div class="line">  &lt;/head&gt;</div><div class="line">  &lt;body&gt;</div><div class="line">    &lt;h3&gt;This is my First app&lt;/h3&gt;</div><div class="line">    &lt;input type=&quot;text&quot; ng-model=&quot;happyInput&quot; ng-init=&quot;happyInput=&apos;sample&apos;&quot;/&gt;</div><div class="line">    &lt;p&gt;input: &#123;&#123; happyInput &#125;&#125;&lt;/p&gt;</div><div class="line">    &lt;h3 ng-bind=&quot;happyInput&quot;&gt;&lt;/h3&gt;</div><div class="line">  &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p> To serve this web page, open it directly in browser, but I prefer using python to server static page: navigate to the page containing the above page (index.html). run <code>python3.4 -m http.server</code>. Then you can navigate to <code>http://localhost:8000</code> to view the page.</p>
+<p> The above page is simple, it declares this is a angular app (“ng-app” directive only). It also declares ng-model for the input textbox. After this binding, we can use whatever data inside input by calling  or explicitly bind it to a html tag (h3 above). The ng-init directive is useful when you want to specify a initial value for your ng-model.</p>
+<p> An angular app cannot be simpler than above. In reality, most of them are pretty complicated.</p>
+</li>
+<li><p>we need javascript now</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;html ng-app=&quot;firstDiv&quot;&gt;</div><div class="line">  &lt;head&gt;</div><div class="line">    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.js&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css&quot;&gt;</div><div class="line">    &lt;script type=&quot;text/javascript&quot; src=&quot;main.js&quot;&gt;&lt;/script&gt;</div><div class="line">  &lt;/head&gt;</div><div class="line">  &lt;body&gt;</div><div class="line">    &lt;h3&gt;This is my First app&lt;/h3&gt;</div><div class="line">    &lt;input type=&quot;text&quot; ng-model=&quot;happyInput&quot; ng-init=&quot;happyInput=&apos;sample&apos;&quot;/&gt;</div><div class="line">    &lt;p&gt;input: &#123;&#123; happyInput &#125;&#125;&lt;/p&gt;</div><div class="line">    &lt;h3 ng-bind=&quot;happyInput&quot;&gt;&lt;/h3&gt;</div><div class="line">    &lt;!-- !!!NEW STUFF BELOW!!! --&gt;</div><div class="line">    &lt;div ng-controller=&quot;firstController&quot;&gt;</div><div class="line">      &lt;ul&gt;</div><div class="line">        &lt;li ng-repeat=&quot;person in personList |orderBy: &apos;-name&apos;&quot;&gt;&#123;&#123;person.name&#125;&#125;&lt;/li&gt;</div><div class="line">      &lt;/ul&gt;</div><div class="line">      &lt;p&gt;&#123;&#123; whereIsMyDataFrom &#125;&#125;&lt;/p&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p> What’s new here:</p>
+<ul>
+<li>Added a name for our ng-app;</li>
+<li>Added a ng-controller=”firstController” for a div;</li>
+<li>Used the ng-bind “whereIsMyDataFrom”, but where is the data?</li>
+<li><p>Used ng-repeat</p>
+<p>Take a look at the js file included in the html<br>main.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">(function() &#123;</div><div class="line">  var firstDivApp = angular.module(&apos;firstDiv&apos;, []);</div><div class="line">  firstDivApp.controller(&apos;firstController&apos;, function($scope)&#123;</div><div class="line">      $scope.personList = [</div><div class="line">          &#123;</div><div class="line">              name: &quot;Zohn&quot;, address: &quot;somewhere&quot;</div><div class="line">          &#125;,</div><div class="line">          &#123;</div><div class="line">              name: &quot;Tom&quot;, address: &quot;somewhere else&quot;</div><div class="line">          &#125;</div><div class="line">      ];</div><div class="line">      $scope.whereIsMyDataFrom = &quot;My Data is from Here&quot;;</div><div class="line">  &#125;);</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p><code>$scope</code> is a special variable for passing date to and from html view and js controller. Here we see where our “whereIsMyDataFrom” is populated and where our personList come from. The orderBy is another concept called ng-filter, normally, it sorts data in ascending order by the field specified. Adding a minus sign <code>-</code> will sort data in descending order.<br>(Note: I actually think it is better to write the controller logic in the following way because of it follows more closely to the dependence injection pattern.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">firstDivApp.controller(&apos;firstController&apos;, [&apos;$scope&apos;, function($scope)&#123;</div><div class="line">   $scope.personList = [</div><div class="line">       &#123;</div><div class="line">           name: &quot;Zohn&quot;, address: &quot;somewhere&quot;</div><div class="line">       &#125;,</div><div class="line">       &#123;</div><div class="line">           name: &quot;Tom&quot;, address: &quot;somewhere else&quot;</div><div class="line">       &#125;</div><div class="line">   ];</div><div class="line">   $scope.whereIsMyDataFrom = &quot;My Data is from Here&quot;;</div><div class="line">&#125;]);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code>The second argument of the `module.controller(...)` has two parts. First part is the objects to be injected, the last element of the list usually contains the previous list elements (quote removed) as arguments. Although you can get away without specifying the injected object names for built-in variables, I do think it is clearly to use them.
+</code></pre><ol>
+<li><p>fun with dependence injection(DI)<br> I think this one is very easy to get hands on, there are three steps:</p>
+<ol>
+<li>put the the name of dependence you want to inject in the controller dependence list as stated above;</li>
+<li><p>call the .factory on the controller, return a function</p>
+<p>Add <code>&lt;h4&gt;&lt;/h4&gt;</code> somewhere iside firstController.</p>
+<p>Modify main.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">(function() &#123;</div><div class="line">var firstDivApp = angular.module(&apos;firstDiv&apos;, []);</div><div class="line"></div><div class="line">firstDivApp.controller(&apos;firstController&apos;, [&apos;$scope&apos;,&apos;getCurrentTime&apos;, function($scope, getCurrentTime)&#123;</div><div class="line">    $scope.personList = [</div><div class="line">        &#123;</div><div class="line">            name: &quot;Zohn&quot;, address: &quot;somewhere&quot;</div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">            name: &quot;Tom&quot;, address: &quot;somewhere else&quot;</div><div class="line">        &#125;</div><div class="line">    ];</div><div class="line">    $scope.whereIsMyDataFrom = &quot;My Data is from Here&quot;;</div><div class="line">    $scope.currentTime = getCurrentTime(&apos;M/d/yy h:mm:ss a&apos;);</div><div class="line">&#125;])</div><div class="line">    .factory(&apos;getCurrentTime&apos;, [&apos;dateFilter&apos;, function(dateFilter, format)&#123;</div><div class="line">        var date = new Date();</div><div class="line"></div><div class="line">        return  function(format)&#123;</div><div class="line">            return dateFilter(new Date(), format);</div><div class="line">        &#125;;</div><div class="line">    &#125;]);</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+<pre><code>Notice the factory part. Here we need a function getCurrentTime which takes a single paramenter &quot;format&quot;. 
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/Technology/" rel="tag"># Technology</a>
+          
+            <a href="/blog/tags/AngularJS/" rel="tag"># AngularJS</a>
+          
+            <a href="/blog/tags/Javascript/" rel="tag"># Javascript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2015/08/05/post16/" rel="next" title="Modifed Python-Markdown for better fenced code support">
+                <i class="fa fa-chevron-left"></i> Modifed Python-Markdown for better fenced code support
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2015/08/25/post18/" rel="prev" title="AngularJS Study Note (2)">
+                AngularJS Study Note (2) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/blog/images/avatar.gif"
+               alt="R Qin" />
+          <p class="site-author-name" itemprop="name">R Qin</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/blog/archives/">
+                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">Tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/blog/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">R Qin</span>
+</div>
+
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

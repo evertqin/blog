@@ -1,0 +1,760 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Technology,C#," />
+
+
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="Qin" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="Previously, I introduced a way to broadcast logging events from log4net. Today I’m taking it a step forward by enabling event broadcasting on website.">
+<meta name="keywords" content="Technology,C#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Combine WCF, ASP.NET, SignalR for event broadcasting (1)">
+<meta property="og:url" content="https://evertqin.github.io/blog/2015/07/29/post12/index.html">
+<meta property="og:site_name" content="Qin">
+<meta property="og:description" content="Previously, I introduced a way to broadcast logging events from log4net. Today I’m taking it a step forward by enabling event broadcasting on website.">
+<meta property="og:image" content="https://evertqin.github.io/home/ruogu/Pictures/SignalR/create_a_console_app_log4net.png">
+<meta property="og:image" content="https://evertqin.github.io/home/ruogu/Pictures/SignalR/create_wcf_console_application.png">
+<meta property="og:image" content="https://evertqin.github.io/home/ruogu/Pictures/SignalR/wcf_run.png">
+<meta property="og:updated_time" content="2017-06-23T21:43:11.710Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Combine WCF, ASP.NET, SignalR for event broadcasting (1)">
+<meta name="twitter:description" content="Previously, I introduced a way to broadcast logging events from log4net. Today I’m taking it a step forward by enabling event broadcasting on website.">
+<meta name="twitter:image" content="https://evertqin.github.io/home/ruogu/Pictures/SignalR/create_a_console_app_log4net.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://evertqin.github.io/blog/2015/07/29/post12/"/>
+
+
+
+
+
+  <title>Combine WCF, ASP.NET, SignalR for event broadcasting (1) | Qin</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Qin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://evertqin.github.io/blog/blog/2015/07/29/post12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="R Qin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Combine WCF, ASP.NET, SignalR for event broadcasting (1)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-07-29T00:00:00-04:00">
+                2015-07-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Previously, I introduced a way to broadcast logging events from log4net. Today I’m taking it a step forward by enabling event broadcasting on website.</p>
+<a id="more"></a>
+<p>In traditional desktop applications, such as WinForms, events handling is quite a breeze – For built in events like Timer.Elaspsed,  the only thing we need to do is to subscribe a delegate. However, when it comes to the web word, events handling is not that simple anymore. The reason is browser does not actively run and wait for events after the page is rendered, so there is no way to change the DOM except for by using frontend javascript. Also, regular ways to send data between frontend and backend, regardless whether it is a synchronized call or AJAX requires a series of actions, including open the socket, sending the request, process the request, send back response, close the socket. The whole process needs to open and close socket each time so it is not very efficient so it is ideal if we need real-time data.</p>
+<p>Luckily, there is a great technology called <a href="http://www.asp.net/signalr" target="_blank" rel="external">SignalR</a> that makes the real-time communication between ASP.NET frontend and backend much easier. What I am going to show here contains three components:</p>
+<h4 id="Create-dummy-business-logic"><a href="#Create-dummy-business-logic" class="headerlink" title="Create dummy business logic"></a>Create dummy business logic</h4><ol>
+<li><p>An assembly that mimic logging event generation from business logic.</p>
+</li>
+<li><p>A WCF service running in either interactive mode or as windows service. This is the backend service.</p>
+</li>
+<li><p>An ASP.NET website that calls the WCF service reference and receive logging events broadcasting all the way from the business logic.</p>
+</li>
+</ol>
+<p>Let’s start by creating the dummy business logic.</p>
+<ul>
+<li><p>Create an empty console application (we will change it to class library later but let’s make it console application first for easier debugging)</p>
+<p><img src="/home/ruogu/Pictures/SignalR/create_a_console_app_log4net.png" alt="Create a Console Application"></p>
+</li>
+<li><p>Add log4net through NuGet</p>
+</li>
+<li><p>Create EventAppender, BroadcastEventArgs and BroadcastEvetnService as introduced in my previous blog post<a href="http://blog.tripplan.info/blog/post/item/4" target="_blank" rel="external">http://blog.tripplan.info/blog/post/item/4</a>.</p>
+</li>
+<li><p>Make a new folder called “Configs” and add log4net_config.xml to that folder, make sure for the line <code>&lt;appender name=&quot;EventAppender&quot; type=&quot;LogBroadcaster.Broadcast.EventAppender, LogBroadcaster&quot;&gt;</code>, you use the correct classes. For the type attribute, the field before comma should be the full reference path to the EventAppender, the field after comma should be the assembly name containing the EventAppender.</p>
+</li>
+<li><p>Add a new folder called “Test” and add a new class “TestRunner”</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">public class TestRunner</div><div class="line">&#123;</div><div class="line">    private static readonly ILog _log = LogManager.GetLogger(typeof (TestRunner));</div><div class="line"></div><div class="line">    private Timer timer;</div><div class="line"></div><div class="line">    public TestRunner()</div><div class="line">    &#123;</div><div class="line">        timer = new Timer();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public void GeneratingRandomLog()</div><div class="line">    &#123;</div><div class="line">        Random rand = new Random();</div><div class="line">        double interval = rand.NextDouble()*10000;</div><div class="line"></div><div class="line">        timer.Interval = interval;</div><div class="line">        timer.Elapsed +=</div><div class="line">            (sender, eventArgs) =&gt;</div><div class="line">            &#123;</div><div class="line">                _log.Warn(string.Format(&quot;This is a test. Now timer is &#123;0&#125;&quot;, eventArgs.SignalTime));</div><div class="line">            &#125;;</div><div class="line">        timer.Start();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>Add the following code snippet to Main function:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">TestRunner testRunner = new TestRunner();</div><div class="line">testRunner.GeneratingRandomLog();</div><div class="line"></div><div class="line">Console.ReadKey();</div></pre></td></tr></table></figure>
+<p>Now run the project, and you should see some dummy log messages scrolling in the console</p>
+<ul>
+<li>Change the project property to dll by changing Application -&gt; Output type to “Class Library”. Compile the dll.</li>
+</ul>
+<h4 id="Create-WCF-Service-and-enabling-asynchronous-callback"><a href="#Create-WCF-Service-and-enabling-asynchronous-callback" class="headerlink" title="Create WCF Service and enabling asynchronous callback"></a>Create WCF Service and enabling asynchronous callback</h4><p>Conventional client server modal is： client sends a request to server and wait for a response, after server processed the request, client get the response then unblock. This is one directional. A Duplex service is a pattern that both endpoints can send and receive messages to the other independently.</p>
+<ul>
+<li><p>Start by creating a console application(We could have started with WCF class library, but still, a console application is easier to debug during development)</p>
+</li>
+<li><p>Add a WCF service to the project (New Item… -&gt; WCF Service). Here I named my service “MyWcfService”. Visual Studio will automatically create IMyWcfService Interface and MyWcfService implementation.</p>
+</li>
+<li><p>To make the project more interesting, I am adding another interface “IMyWcfServiceAsync” to the project. The idea behind this is that I want to put all my asynchronous functions under a separate interface so I can add different ServiceContract Attributes to them. The project will look like the following figure.</p>
+<p><img src="/home/ruogu/Pictures/SignalR/create_wcf_console_application.png" alt="Create WCF console application"></p>
+</li>
+<li><p>Add the dll generated from last solution as reference..</p>
+</li>
+<li><p>Add ServiceContracts and OperationContracts to the interfaces and classes.</p>
+<ul>
+<li>IMyWcfService</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[ServiceContract]</div><div class="line">public interface IMyWcfService</div><div class="line">&#123;</div><div class="line">    [OperationContract]</div><div class="line">    void DoWork();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>IMyWcfServiceAsync</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">[ServiceContract(Namespace = &quot;mynamspace&quot;, SessionMode = SessionMode.Required)]</div><div class="line">public interface IClientCallback</div><div class="line">&#123;</div><div class="line">    [OperationContract]</div><div class="line">    void NotifyClient(string message);</div><div class="line">&#125;</div><div class="line"></div><div class="line">[ServiceContract(Namespace = &quot;mynamspace&quot;, SessionMode = SessionMode.Required,</div><div class="line">    CallbackContract = typeof (IClientCallback))]</div><div class="line">public interface IMyWcfServiceAsync</div><div class="line">&#123;</div><div class="line">    [OperationContract(IsOneWay = true)]</div><div class="line">    void ListenToEvents();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>  The most importand part is <code>[ServiceContract(Namespace = &quot;mynamspace&quot;, SessionMode = SessionMode.Required,
+      CallbackContract = typeof (IClientCallback))]</code> attribute. This tells that this ServiceContract is a asynchronous callback contract and the client to provide a implementation of IClientCallback interface.</p>
+<ul>
+<li>MyWcfService</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">using System.ServiceModel;</div><div class="line">using LogBroadcaster.Broadcast;</div><div class="line">using LogBroadcaster.Test;</div><div class="line"></div><div class="line">namespace MyWcfServiceHost</div><div class="line">&#123;</div><div class="line">    public class MyWcfService : IMyWcfService, IMyWcfServiceAsync</div><div class="line">    &#123;</div><div class="line">        public void DoWork()</div><div class="line">        &#123;</div><div class="line">            TestRunner testRunner = new TestRunner();</div><div class="line">            testRunner.GeneratingRandomLog();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        public void ListenToEvents()</div><div class="line">        &#123;</div><div class="line">            // this call back is only valid in the context of this function</div><div class="line">            var callback = OperationContext.Current.GetCallbackChannel&lt;IClientCallback&gt;();</div><div class="line"></div><div class="line">            BroadcastEventService.Instance.BroadcastEvent +=</div><div class="line">                (sender, eventArgs) =&gt; &#123; callback.NotifyClient(eventArgs.Message); &#125;;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li><p>Make a new folder called “Configs” and add log4net_config.xml to that forlder by copying from previous solution.</p>
+</li>
+<li><p>Rename <code>Program.cs</code> to “WcfServiceHost” (or a name of your choice) and replace its content with following code:</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">namespace MyWcfServiceHost</div><div class="line">&#123;</div><div class="line">    internal class WcfServiceHost : ServiceBase</div><div class="line">    &#123;</div><div class="line">        private static readonly Dictionary&lt;string, ServiceHost&gt; _ServiceHosts = new Dictionary&lt;string, ServiceHost&gt;();</div><div class="line"></div><div class="line">        public static ServiceHost GetService(string sSrvName)</div><div class="line">        &#123;</div><div class="line">            if (_ServiceHosts.ContainsKey(sSrvName)) return _ServiceHosts[sSrvName];</div><div class="line">            return null;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        public WcfServiceHost()</div><div class="line">        &#123;</div><div class="line">            this.ServiceName = &quot;MyWcfService&quot;;</div><div class="line">            Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        private static void RunInteractive(ServiceBase[] servicesToRun)</div><div class="line">        &#123;</div><div class="line">            Console.WriteLine(&quot;Services running in interactive mode.&quot;);</div><div class="line">            Console.WriteLine();</div><div class="line"></div><div class="line">            MethodInfo onStartMethod = typeof (ServiceBase).GetMethod(&quot;OnStart&quot;,</div><div class="line">                BindingFlags.Instance | BindingFlags.NonPublic);</div><div class="line">            foreach (ServiceBase service in servicesToRun)</div><div class="line">            &#123;</div><div class="line">                Console.Write(&quot;Starting &#123;0&#125;...&quot;, service.ServiceName);</div><div class="line">                ((WcfServiceHost) service).OnStart(new string[] &#123;&#125;);</div><div class="line">                //onStartMethod.Invoke(service, new object[] &#123; new string[] &#123; &#125; &#125;);</div><div class="line">                Console.Write(&quot;Started&quot;);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            Console.WriteLine();</div><div class="line">            Console.WriteLine();</div><div class="line">            Console.WriteLine(</div><div class="line">                &quot;Press any key to stop the services and end the process...&quot;);</div><div class="line">            Console.ReadKey();</div><div class="line">            Console.WriteLine();</div><div class="line"></div><div class="line">            MethodInfo onStopMethod = typeof (ServiceBase).GetMethod(&quot;OnStop&quot;,</div><div class="line">                BindingFlags.Instance | BindingFlags.NonPublic);</div><div class="line">            foreach (ServiceBase service in servicesToRun)</div><div class="line">            &#123;</div><div class="line">                Console.Write(&quot;Stopping &#123;0&#125;...&quot;, service.ServiceName);</div><div class="line">                //onStopMethod.Invoke(service, null);</div><div class="line">                ((WcfServiceHost) service).OnStop();</div><div class="line">                Console.WriteLine(&quot;Stopped&quot;);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            Console.WriteLine(&quot;All services stopped.&quot;);</div><div class="line">            // Keep the console alive for a second to allow the user to see the message.</div><div class="line">            Thread.Sleep(1000);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        protected int OpenAll()</div><div class="line">        &#123;</div><div class="line">            OpenHost&lt;MyWcfService&gt;();</div><div class="line">            return _ServiceHosts.Count();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        protected int CloseAll()</div><div class="line">        &#123;</div><div class="line">            foreach (ServiceHost serviceHost in _ServiceHosts.Values)</div><div class="line">            &#123;</div><div class="line">                try</div><div class="line">                &#123;</div><div class="line">                    serviceHost.Close(new TimeSpan(0, 0, 10));</div><div class="line">                &#125;</div><div class="line">                catch (Exception ex)</div><div class="line">                &#123;</div><div class="line">                    serviceHost.Abort();</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            _ServiceHosts.Clear();</div><div class="line">            return 0;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        protected void OpenHost&lt;T&gt;()</div><div class="line">        &#123;</div><div class="line">            Type type = typeof (T);</div><div class="line">            ServiceHost serviceHost = new ServiceHost(type);</div><div class="line">            serviceHost.Open();</div><div class="line">            _ServiceHosts[type.ToString()] = serviceHost;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        protected override void OnStart(string[] args)</div><div class="line">        &#123;</div><div class="line">            // eventlog.WriteEntry(&quot;AnalysisWindowsService started.&quot;);</div><div class="line">            this.CloseAll();</div><div class="line">            this.OpenAll();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        protected override void OnStop()</div><div class="line">        &#123;</div><div class="line">            this.CloseAll();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        private static void Main(string[] args)</div><div class="line">        &#123;</div><div class="line">            ServiceBase[] servicesToRun;</div><div class="line">            servicesToRun = new ServiceBase[]</div><div class="line">            &#123;</div><div class="line">                new WcfServiceHost()</div><div class="line">            &#125;;</div><div class="line">            if (Environment.UserInteractive)</div><div class="line">            &#123;</div><div class="line">                RunInteractive(servicesToRun);</div><div class="line">            &#125;</div><div class="line">            else</div><div class="line">            &#123;</div><div class="line">                Run(servicesToRun);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>Update the app.config</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line"></div><div class="line">&lt;configuration&gt;</div><div class="line">  &lt;system.serviceModel&gt;</div><div class="line">    &lt;behaviors&gt;</div><div class="line">      &lt;serviceBehaviors&gt;</div><div class="line">        &lt;behavior name=&quot;&quot;&gt;</div><div class="line">          &lt;serviceMetadata httpGetEnabled=&quot;false&quot; /&gt;</div><div class="line">          &lt;serviceDebug includeExceptionDetailInFaults=&quot;false&quot; /&gt;</div><div class="line">        &lt;/behavior&gt;</div><div class="line">      &lt;/serviceBehaviors&gt;</div><div class="line">      &lt;endpointBehaviors&gt;</div><div class="line">        &lt;behavior name=&quot;MyEndpointBehavior&quot;&gt;</div><div class="line">          &lt;dataContractSerializer maxItemsInObjectGraph=&quot;2147483646&quot; /&gt;</div><div class="line">        &lt;/behavior&gt;</div><div class="line">      &lt;/endpointBehaviors&gt;</div><div class="line">    &lt;/behaviors&gt;</div><div class="line"></div><div class="line">    &lt;bindings&gt;</div><div class="line">      &lt;netTcpBinding&gt;</div><div class="line">        &lt;binding name=&quot;BufferedNetTcpBindingConf&quot; receiveTimeout=&quot;16:10:00&quot; sendTimeout=&quot;16:10:00&quot;</div><div class="line">                 transferMode=&quot;Buffered&quot; maxBufferPoolSize=&quot;2147483647&quot; maxBufferSize=&quot;2147483647&quot;</div><div class="line">                 maxReceivedMessageSize=&quot;2147483647&quot;&gt;</div><div class="line">          &lt;readerQuotas maxArrayLength=&quot;2147483647&quot; /&gt;</div><div class="line">          &lt;security mode=&quot;None&quot; /&gt;</div><div class="line">        &lt;/binding&gt;</div><div class="line">      &lt;/netTcpBinding&gt;</div><div class="line">    &lt;/bindings&gt;</div><div class="line">    &lt;services&gt;</div><div class="line">      &lt;service name=&quot;MyWcfServiceHost.MyWcfService&quot;&gt;</div><div class="line">        &lt;endpoint address=&quot;&quot; behaviorConfiguration=&quot;MyEndpointBehavior&quot; binding=&quot;netTcpBinding&quot;  bindingConfiguration=&quot;BufferedNetTcpBindingConf&quot; contract=&quot;MyWcfServiceHost.IMyWcfService&quot;&gt;</div><div class="line">          &lt;identity&gt;</div><div class="line">            &lt;dns value=&quot;localhost&quot; /&gt;</div><div class="line">          &lt;/identity&gt;</div><div class="line">        &lt;/endpoint&gt;</div><div class="line">        &lt;endpoint address=&quot;&quot; behaviorConfiguration=&quot;MyEndpointBehavior&quot; binding=&quot;netTcpBinding&quot; bindingConfiguration=&quot;BufferedNetTcpBindingConf&quot; contract=&quot;MyWcfServiceHost.IMyWcfServiceAsync&quot;&gt;</div><div class="line">          &lt;identity&gt;</div><div class="line">            &lt;dns value=&quot;localhost&quot; /&gt;</div><div class="line">          &lt;/identity&gt;</div><div class="line">        &lt;/endpoint&gt;</div><div class="line">        &lt;endpoint address=&quot;mex&quot; binding=&quot;mexTcpBinding&quot; name=&quot;MexTcpBindingEndpoint&quot; contract=&quot;IMetadataExchange&quot; /&gt;</div><div class="line">        &lt;host&gt;</div><div class="line">          &lt;baseAddresses&gt;</div><div class="line">            &lt;add baseAddress=&quot;net.tcp://localhost:8733/MyWcfService/&quot; /&gt;</div><div class="line">          &lt;/baseAddresses&gt;</div><div class="line">        &lt;/host&gt;</div><div class="line">      &lt;/service&gt;</div><div class="line">    &lt;/services&gt;</div><div class="line">  &lt;/system.serviceModel&gt;</div><div class="line">  &lt;startup&gt;</div><div class="line">    &lt;supportedRuntime version=&quot;v4.0&quot; sku=&quot;.NETFramework,Version=v4.5&quot; /&gt;</div><div class="line">  &lt;/startup&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure>
+<p>  I am creating two endpoints for two of my interfaces. Also, I am setting “maxReceivedMessageSize” to max, although it is not necessary in this application. Also I am using net+tcp here. You can also use dualHttp binding, check the article here <a href="https://msdn.microsoft.com/en-us/library/ms731064(v=vs.110" target="_blank" rel="external">Duplex Service</a>.aspx)</p>
+<p>  The above code will enable this wcf to run either under interactive mode or run as windows service. Hit F5 and you should be able to see the following screen.</p>
+<p>  <img src="/home/ruogu/Pictures/SignalR/wcf_run.png" alt="WCF service successfully run under interactive mode"></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/Technology/" rel="tag"># Technology</a>
+          
+            <a href="/blog/tags/C/" rel="tag"># C#</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2015/07/23/post11/" rel="next" title="Canada Banff, Yoho, Jasper trip(5)">
+                <i class="fa fa-chevron-left"></i> Canada Banff, Yoho, Jasper trip(5)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2015/07/29/post13/" rel="prev" title="Combine WCF, ASP.NET, SignalR for event broadcasting (2)">
+                Combine WCF, ASP.NET, SignalR for event broadcasting (2) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/blog/images/avatar.gif"
+               alt="R Qin" />
+          <p class="site-author-name" itemprop="name">R Qin</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/blog/archives/">
+                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">Tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/blog/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Create-dummy-business-logic"><span class="nav-number">1.</span> <span class="nav-text">Create dummy business logic</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Create-WCF-Service-and-enabling-asynchronous-callback"><span class="nav-number">2.</span> <span class="nav-text">Create WCF Service and enabling asynchronous callback</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">R Qin</span>
+</div>
+
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
