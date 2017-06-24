@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Qin</title>
-  
+  <title>while(1);</title>
+  <subtitle>A dumpster of everything</subtitle>
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://evertqin.github.io/blog/"/>
-  <updated>2017-06-23T21:44:59.008Z</updated>
+  <updated>2017-06-23T21:44:59.000Z</updated>
   <id>https://evertqin.github.io/blog/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://evertqin.github.io/blog/2016/02/04/post33/"/>
     <id>https://evertqin.github.io/blog/2016/02/04/post33/</id>
     <published>2016-02-04T05:00:00.000Z</published>
-    <updated>2017-06-23T21:44:59.008Z</updated>
+    <updated>2017-06-23T21:44:59.000Z</updated>
     
     <content type="html"><![CDATA[<p>Something we need to convert a table into delimited string for, say, log or exception message, there are three ways to do it in TSQL</p>
 <a id="more"></a>
@@ -46,7 +46,7 @@
     <link href="https://evertqin.github.io/blog/2016/02/03/post32/"/>
     <id>https://evertqin.github.io/blog/2016/02/03/post32/</id>
     <published>2016-02-03T05:00:00.000Z</published>
-    <updated>2017-06-23T21:44:51.198Z</updated>
+    <updated>2017-06-23T21:44:51.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Why-we-want-to-use-sp-executesql"><a href="#Why-we-want-to-use-sp-executesql" class="headerlink" title="Why we want to use sp_executesql"></a>Why we want to use sp_executesql</h1><p>One use case for this stored procedure is when we need to do parameterized linked query using <code>OPENQUERY</code>. I could have constructed a string with the parameter decorated by some special characters such as <code></code> (This resembles the handlebar a lot, or AngularJS) and use <code>EXEC</code> to execute the query. However, a fundamental flaw with that approach is that I will not be able to return a value since the query cannot be parameterized. With the help of sp_executesql, we are able to provide input and output parameters</p>
 <a id="more"></a>
@@ -76,7 +76,7 @@
     <link href="https://evertqin.github.io/blog/2016/02/01/post31/"/>
     <id>https://evertqin.github.io/blog/2016/02/01/post31/</id>
     <published>2016-02-01T05:00:00.000Z</published>
-    <updated>2017-06-23T21:44:44.325Z</updated>
+    <updated>2017-06-23T21:44:44.000Z</updated>
     
     <content type="html"><![CDATA[<p>Having played with Nodejs for a while, I decided to try some other web framwwork for a change, having used Tomcat a little bit, I decide to try a simple java based restful service with Jersey + Tomcat. Most of the online tutorials are based on eclipse or based on maven. Here I am using Intellij with gradle. I used <a href="https://github.com/jasonray/jersey-starterkit/wiki/Create-a-&quot;Hello-World&quot;-jersey-project" target="_blank" rel="external">this article</a> as reference.</p>
 <a id="more"></a>
@@ -130,7 +130,7 @@
     <link href="https://evertqin.github.io/blog/2016/01/01/post30/"/>
     <id>https://evertqin.github.io/blog/2016/01/01/post30/</id>
     <published>2016-01-01T05:00:00.000Z</published>
-    <updated>2017-06-23T21:44:35.631Z</updated>
+    <updated>2017-06-23T21:44:35.000Z</updated>
     
     <content type="html"><![CDATA[<p>Having played with Nodejs for a while, I decided to try some other web framwwork for a change, having used Tomcat a little bit, I decide to try a simple java based restful service with Jersey + Tomcat. Most of the online tutorials are based on eclipse or based on maven. Here I am using Intellij with gradle.</p>
 <a id="more"></a>
@@ -166,7 +166,7 @@
     <link href="https://evertqin.github.io/blog/2016/01/01/post29/"/>
     <id>https://evertqin.github.io/blog/2016/01/01/post29/</id>
     <published>2016-01-01T05:00:00.000Z</published>
-    <updated>2017-06-23T21:44:17.278Z</updated>
+    <updated>2017-06-23T21:44:17.000Z</updated>
     
     <content type="html"><![CDATA[<p>我在写这个开头的时候，脑中跳出的头一句是：“2015是变革的一年，是发展的一年，是丰收的一年”。可以是觉得有点写思想汇报即视感，于是作罢。<br>想要写点什么新奇的东西，可以又觉得任凭我怎么总结2015都会有所疏漏，因而作此文不为总结，只为留下些东西，权作日后的参考。</p>
 <a id="more"></a>
@@ -218,7 +218,7 @@
     <link href="https://evertqin.github.io/blog/2015/12/16/post28/"/>
     <id>https://evertqin.github.io/blog/2015/12/16/post28/</id>
     <published>2015-12-16T05:00:00.000Z</published>
-    <updated>2017-06-23T21:44:12.174Z</updated>
+    <updated>2017-06-23T21:44:12.000Z</updated>
     
     <content type="html"><![CDATA[<p>Consider the following scenario, we are creating a set of dropdowns each displays a series folders in a file system. User will click a dropdown to view all the folders (or files), then make a selection. After selection is made, all the dropdowns following the one user interacted with will change to show the subfolders (or files, if there are any) in the folder the user has selected.</p>
 <a id="more"></a>
@@ -304,7 +304,7 @@
     <link href="https://evertqin.github.io/blog/2015/11/24/post27/"/>
     <id>https://evertqin.github.io/blog/2015/11/24/post27/</id>
     <published>2015-11-24T05:00:00.000Z</published>
-    <updated>2017-06-23T21:43:50.030Z</updated>
+    <updated>2017-06-23T21:43:50.000Z</updated>
     
     <content type="html"><![CDATA[<p>Major change has been made to ReactJS: JSXTransformer was deprecated, <a href="https://facebook.github.io/react/docs/getting-started.html" target="_blank" rel="external">Babel with Browserify</a> is now the recommended way to transcribe the jsx files. I am documenting the setup process hoping it will be helpful in the future.</p>
 <a id="more"></a>
@@ -370,7 +370,7 @@
     <link href="https://evertqin.github.io/blog/2015/11/08/post26/"/>
     <id>https://evertqin.github.io/blog/2015/11/08/post26/</id>
     <published>2015-11-08T05:00:00.000Z</published>
-    <updated>2017-06-23T21:43:31.433Z</updated>
+    <updated>2017-06-23T21:43:31.000Z</updated>
     
     <content type="html"><![CDATA[<p>John Resig’s book ‘Secretes of the JavaScript Ninja’ is really a fun and inspiring masterpiece to read. I believe it is one of the JavaScript book you should keep on your desk for study and reference. I am going to write something to summarize some important and interesting usages of .call(), .apply() and .bind() for my reference.</p>
 <a id="more"></a>
@@ -406,7 +406,7 @@
     <link href="https://evertqin.github.io/blog/2015/11/04/post25/"/>
     <id>https://evertqin.github.io/blog/2015/11/04/post25/</id>
     <published>2015-11-04T05:00:00.000Z</published>
-    <updated>2017-06-23T21:42:36.017Z</updated>
+    <updated>2017-06-23T21:42:36.000Z</updated>
     
     <content type="html"><![CDATA[<p>I have been working with <a href="http://ilnumerics.net/" target="_blank" rel="external">ILNumerics.NET</a> for quite a while. It is a fine piece of mathmatical library which provides better performance than most of the other .NET numeric libraries. Used properly, it’s performance can also surpass that of MATLAB.</p>
 <a id="more"></a>
@@ -443,7 +443,7 @@
     <link href="https://evertqin.github.io/blog/2015/10/20/post24/"/>
     <id>https://evertqin.github.io/blog/2015/10/20/post24/</id>
     <published>2015-10-20T04:00:00.000Z</published>
-    <updated>2017-06-23T21:42:26.809Z</updated>
+    <updated>2017-06-23T21:42:26.000Z</updated>
     
     <content type="html"><![CDATA[<p>An interesting problem, given some numbers, group them into individual sets based on certain rules. For example, for numbers between, we group them into sets (0, 0), [1, 5), [10, 30), [30, 60), [60, 100]. I found this <a href="https://www.topcoder.com/community/data-science/data-science-tutorials/disjoint-set-data-structures/" target="_blank" rel="external">article</a> on topcode is very helpful. Below is an implementation in C++.</p>
 <a id="more"></a>
@@ -470,7 +470,7 @@
     <link href="https://evertqin.github.io/blog/2015/10/08/post23/"/>
     <id>https://evertqin.github.io/blog/2015/10/08/post23/</id>
     <published>2015-10-08T04:00:00.000Z</published>
-    <updated>2017-06-23T21:42:21.128Z</updated>
+    <updated>2017-06-23T21:42:21.000Z</updated>
     
     <content type="html"><![CDATA[<p>Recently, I accidentally poked into the frontend development code of some company. That website does not use too many frontend<br>frameworks except for jQuery and another one I am going to talk about today – RequireJS.</p>
 <a id="more"></a>
@@ -523,7 +523,7 @@
     <link href="https://evertqin.github.io/blog/2015/10/01/post21/"/>
     <id>https://evertqin.github.io/blog/2015/10/01/post21/</id>
     <published>2015-10-01T04:00:00.000Z</published>
-    <updated>2017-06-23T21:42:00.326Z</updated>
+    <updated>2017-06-23T21:42:00.000Z</updated>
     
     <content type="html"><![CDATA[<p>(PlaceHolder)</p>
 ]]></content>
@@ -547,7 +547,7 @@
     <link href="https://evertqin.github.io/blog/2015/10/01/post22/"/>
     <id>https://evertqin.github.io/blog/2015/10/01/post22/</id>
     <published>2015-10-01T04:00:00.000Z</published>
-    <updated>2017-06-23T21:46:57.726Z</updated>
+    <updated>2017-06-23T21:46:57.000Z</updated>
     
     <content type="html"><![CDATA[<p>I am exploring ReactJS a bit further. I think the key part to understand is how data flows between compoents. The rule is “Data (props) flows from parents to children while events bubble up from children to parents. State or props change will cause compoents to refresh.”. With this in mind it is easy to create a dynamic UI. Today, I am going to create a simple UI that gets all the svgs from a static folder, and give user a list of svg files so they can choose to display selected svg. This is like a very simple file server.</p>
 <a id="more"></a>
@@ -599,7 +599,7 @@
     <link href="https://evertqin.github.io/blog/2015/09/24/post20/"/>
     <id>https://evertqin.github.io/blog/2015/09/24/post20/</id>
     <published>2015-09-24T04:00:00.000Z</published>
-    <updated>2017-06-23T21:41:54.087Z</updated>
+    <updated>2017-06-23T21:41:54.000Z</updated>
     
     <content type="html"><![CDATA[<p>I am doing a new project recently so I am trying to follow the react.js tutorial and make use of this new technology in my project. It is claimed that the concept of react.js is fondamentally different from AngularJS. For example AngularJS is a full MVC framework but ReactJS is only the View of the MVC. The following figure demonstrated the whole concept.</p>
 <a id="more"></a>
@@ -633,7 +633,7 @@
     <link href="https://evertqin.github.io/blog/2015/08/26/post19/"/>
     <id>https://evertqin.github.io/blog/2015/08/26/post19/</id>
     <published>2015-08-26T04:00:00.000Z</published>
-    <updated>2017-06-23T21:41:36.695Z</updated>
+    <updated>2017-06-23T21:41:36.000Z</updated>
     
     <content type="html"><![CDATA[<p>Tried a little big ngView and ngRoute, the basic concept is not so difficult to grasp. It is like regular V and C in MVC.<br>The function of this ngApp is to display different images when click on different links. Traditionally, using jQuery, we can just update the src of the image.<br>This ngApp is just for demo, i don’t think it has more advantage than just using jQuery. But it does quite fun to think of this in a VC way.</p>
 <a id="more"></a>
@@ -664,7 +664,7 @@
     <link href="https://evertqin.github.io/blog/2015/08/25/post18/"/>
     <id>https://evertqin.github.io/blog/2015/08/25/post18/</id>
     <published>2015-08-25T04:00:00.000Z</published>
-    <updated>2017-06-23T21:41:25.991Z</updated>
+    <updated>2017-06-23T21:41:25.000Z</updated>
     
     <content type="html"><![CDATA[<p>Other Random notes about angularjs, I will add more to this.     </p>
 <a id="more"></a>
@@ -739,7 +739,7 @@ The above function update the element text of the scope every second.
     <link href="https://evertqin.github.io/blog/2015/08/24/post17/"/>
     <id>https://evertqin.github.io/blog/2015/08/24/post17/</id>
     <published>2015-08-24T04:00:00.000Z</published>
-    <updated>2017-06-23T21:41:11.007Z</updated>
+    <updated>2017-06-23T21:41:11.000Z</updated>
     
     <content type="html"><![CDATA[<p>I have been learning AngularJS recently. Although people say Angular might be okay for small scale websites, it becomes very slow as the website grow larger. Many people turn to React.js for better performace. But I do think it<br>is useful to learn the concept of Angular since it has been there for quite a while and there are a lot of cool concepts.</p>
 <a id="more"></a>
@@ -806,7 +806,7 @@ The above function update the element text of the scope every second.
     <link href="https://evertqin.github.io/blog/2015/08/05/post16/"/>
     <id>https://evertqin.github.io/blog/2015/08/05/post16/</id>
     <published>2015-08-05T04:00:00.000Z</published>
-    <updated>2017-06-23T21:41:00.055Z</updated>
+    <updated>2017-06-23T21:41:00.000Z</updated>
     
     <content type="html"><![CDATA[<p>Today I committed a modifed version of Python-Markdown. Previously, this pip library only supports fenced block at document root level. It is quite inconvenient as often times, we need to nest a code blog inside an ordered list. You can check my <a href="http://blog.tripplan.info/blog/post/item/14" target="_blank" rel="external">previous post</a> for a demo.</p>
 <a id="more"></a>
@@ -851,7 +851,7 @@ The above function update the element text of the scope every second.
     <link href="https://evertqin.github.io/blog/2015/08/03/post15/"/>
     <id>https://evertqin.github.io/blog/2015/08/03/post15/</id>
     <published>2015-08-03T04:00:00.000Z</published>
-    <updated>2017-06-23T21:42:53.740Z</updated>
+    <updated>2017-06-23T21:42:53.000Z</updated>
     
     <content type="html"><![CDATA[<p>One interesting feature of C# is that you can directly use unmanaged dlls from the managed code. There are different ways to do this, such as: 1) using a unsafe block and write unmanaged code directly. It is tested that the performance of these unmanaged codes is somewhate better than managed code. 2) use Marshall and dllimport from C# and dllexport from C++; 3) use 3rd party libraries such as swig.exe. Here I am going to introduce using dllimport because I think this is the most native way to deal with interop requirements.</p>
 <a id="more"></a>
@@ -916,7 +916,7 @@ The above function update the element text of the scope every second.
     <link href="https://evertqin.github.io/blog/2015/08/03/post14/"/>
     <id>https://evertqin.github.io/blog/2015/08/03/post14/</id>
     <published>2015-08-03T04:00:00.000Z</published>
-    <updated>2017-06-23T21:43:00.167Z</updated>
+    <updated>2017-06-23T21:43:00.000Z</updated>
     
     <content type="html"><![CDATA[<p>Here I am going to summarize commonly used ways to pass data between server and client. There are traditional ways along with some ASP.NET specific ways.</p>
 <a id="more"></a>

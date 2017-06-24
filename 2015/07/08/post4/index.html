@@ -83,7 +83,7 @@
 
 
 
-  <link rel="alternate" href="/blog/atom.xml" title="Qin" type="application/atom+xml" />
+  <link rel="alternate" href="/blog/atom.xml" title="while(1);" type="application/atom+xml" />
 
 
 
@@ -100,9 +100,9 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Custom log4net appender for broadcasting log events">
 <meta property="og:url" content="https://evertqin.github.io/blog/2015/07/08/post4/index.html">
-<meta property="og:site_name" content="Qin">
+<meta property="og:site_name" content="while(1);">
 <meta property="og:description" content="Recently, I was assigned a task to create a module that other modules can subscribe to and get updates when message is logged. Naturally, one would think of using C# event to broadcast a message and c">
-<meta property="og:updated_time" content="2017-06-23T21:45:10.389Z">
+<meta property="og:updated_time" content="2017-06-23T21:45:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Custom log4net appender for broadcasting log events">
 <meta name="twitter:description" content="Recently, I was assigned a task to create a module that other modules can subscribe to and get updates when message is logged. Naturally, one would think of using C# event to broadcast a message and c">
@@ -139,7 +139,7 @@
 
 
 
-  <title>Custom log4net appender for broadcasting log events | Qin</title>
+  <title>Custom log4net appender for broadcasting log events | while(1);</title>
   
 
 
@@ -175,12 +175,12 @@
     <div class="custom-logo-site-title">
       <a href="/blog/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Qin</span>
+        <span class="site-title">while(1);</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <h1 class="site-subtitle" itemprop="description">A dumpster of everything</h1>
       
   </div>
 
@@ -205,7 +205,17 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/blog/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
           </a>
         </li>
       
@@ -215,7 +225,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -267,7 +277,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Qin">
+      <meta itemprop="name" content="while(1);">
     </span>
 
     
@@ -275,7 +285,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Custom log4net appender for broadcasting log events</h1>
+          <h2 class="post-title" itemprop="name headline">Custom log4net appender for broadcasting log events</h2>
         
 
         <div class="post-meta">
@@ -285,7 +295,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-07-08T00:00:00-04:00">
                 2015-07-08
@@ -300,6 +310,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/2015/07/08/post4/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2015/07/08/post4/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -427,6 +448,13 @@
           
   <div class="comments" id="comments">
     
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
   </div>
 
 
@@ -457,7 +485,7 @@
           <p class="site-author-name" itemprop="name">R Qin</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
-          
+           
         </div>
         <nav class="site-state motion-element">
 
@@ -465,7 +493,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/blog/archives/">
                 <span class="site-state-item-count">34</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -478,7 +506,7 @@
             <div class="site-state-item site-state-tags">
               
                 <span class="site-state-item-count">26</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               
             </div>
           
@@ -535,7 +563,7 @@
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
@@ -639,16 +667,32 @@
 
   
 
+    
+      <script id="dsq-count-scr" src="https://tripplaninfo.disqus.com/count.js" async></script>
+    
 
-
-
-
-
-
-
-
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://evertqin.github.io/blog/2015/07/08/post4/';
+          this.page.identifier = '2015/07/08/post4/';
+          this.page.title = 'Custom log4net appender for broadcasting log events';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://tripplaninfo.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
 
   
+
+
+
+
+
+
+
 
 
 
