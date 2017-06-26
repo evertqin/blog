@@ -102,12 +102,12 @@
 <meta property="og:url" content="https://evertqin.github.io/blog/2015/08/03/post15/index.html">
 <meta property="og:site_name" content="while(1);">
 <meta property="og:description" content="One interesting feature of C# is that you can directly use unmanaged dlls from the managed code. There are different ways to do this, such as: 1) using a unsafe block and write unmanaged code directly">
-<meta property="og:image" content="https://evertqin.github.io/home/ruogu/Pictures/Capture.PNG">
-<meta property="og:updated_time" content="2017-06-23T21:42:53.740Z">
+<meta property="og:image" content="http://i.imgur.com/d0D0H74.png">
+<meta property="og:updated_time" content="2017-06-26T16:50:18.011Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C# and C++ Interop Demonstration">
 <meta name="twitter:description" content="One interesting feature of C# is that you can directly use unmanaged dlls from the managed code. There are different ways to do this, such as: 1) using a unsafe block and write unmanaged code directly">
-<meta name="twitter:image" content="https://evertqin.github.io/home/ruogu/Pictures/Capture.PNG">
+<meta name="twitter:image" content="http://i.imgur.com/d0D0H74.png">
 
 
 
@@ -392,7 +392,7 @@
 <p>in C#, we need to call the above function:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">[DllImport(&quot;CppLib.dll&quot;)]</div><div class="line">public static extern IntPtr make_1d_array(double[] nums, int size);</div><div class="line">[DllImport(&quot;CppLib.dll&quot;)]</div><div class="line">public static extern int release_one_dim(IntPtr toFree);</div><div class="line"></div><div class="line">public void RetriveArrayType()</div><div class="line">&#123;</div><div class="line">    Console.WriteLine(&quot;Retriving Array&quot;);</div><div class="line">    double[] nums = &#123; 1, 2, 3, 4, 5 &#125;;</div><div class="line">    IntPtr ptr = make_1d_array(nums, nums.Length);</div><div class="line">    OneDimRetArray result = (OneDimRetArray)Marshal.PtrToStructure(ptr,</div><div class="line">                            typeof(OneDimRetArray));</div><div class="line"></div><div class="line">    double[] num = new double[result.size];</div><div class="line">    Marshal.Copy(result.content, num, 0, result.size);</div><div class="line">    foreach (double d in num)</div><div class="line">    &#123;</div><div class="line">        Console.Write(d + &quot;, &quot;);</div><div class="line">    &#125;</div><div class="line">    Console.WriteLine();</div><div class="line"></div><div class="line">    int release = release_one_dim(ptr);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>Run the whole project, you should see the following output.</p>
-<p><img src="/home/ruogu/Pictures/Capture.PNG" alt="Run Result"></p>
+<p><img src="http://i.imgur.com/d0D0H74.png" alt="Run Result"></p>
 <p>You can find the source code on <a href="https://github.com/evertqin/DotNetDemos/tree/master/SharpCppInterop" target="_blank" rel="external">GitHub</a></p>
 <font color="red">Comment (09/01/2015): I think there is something miss about releasing memory when I first wrote it. Now i think the correct way<br>to do it is by using the follong Marshal functions: <code>Marshal.DestroyStructure</code>, <code>Marshal.FreeHGlobal</code>.<br></font>
 

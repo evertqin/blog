@@ -102,12 +102,12 @@
 <meta property="og:url" content="https://evertqin.github.io/blog/2016/01/01/post30/index.html">
 <meta property="og:site_name" content="while(1);">
 <meta property="og:description" content="Having played with Nodejs for a while, I decided to try some other web framwwork for a change, having used Tomcat a little bit, I decide to try a simple java based restful service with Jersey + Tomcat">
-<meta property="og:image" content="https://evertqin.github.io/home/ruogu/Pictures/post31/choose_gradle.png">
-<meta property="og:updated_time" content="2017-06-23T21:44:35.631Z">
+<meta property="og:image" content="http://i.imgur.com/YAGZPPj.png">
+<meta property="og:updated_time" content="2017-06-26T16:50:18.240Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Setup Jersey Restful service in Intellij">
 <meta name="twitter:description" content="Having played with Nodejs for a while, I decided to try some other web framwwork for a change, having used Tomcat a little bit, I decide to try a simple java based restful service with Jersey + Tomcat">
-<meta name="twitter:image" content="https://evertqin.github.io/home/ruogu/Pictures/post31/choose_gradle.png">
+<meta name="twitter:image" content="http://i.imgur.com/YAGZPPj.png">
 
 
 
@@ -358,7 +358,7 @@
         <p>Having played with Nodejs for a while, I decided to try some other web framwwork for a change, having used Tomcat a little bit, I decide to try a simple java based restful service with Jersey + Tomcat. Most of the online tutorials are based on eclipse or based on maven. Here I am using Intellij with gradle.</p>
 <a id="more"></a>
 <ol>
-<li>Start a new project and select gradle as project type. Also choose the Web as this may come handy in the future<br><img src="/home/ruogu/Pictures/post31/choose_gradle.png" alt="Choose gradle"></li>
+<li>Start a new project and select gradle as project type. Also choose the Web as this may come handy in the future<br><img src="http://i.imgur.com/YAGZPPj.png" alt="Choose gradle"></li>
 <li>Enter the GroupId and ArtifactId, then in the next screen, choose gradle version and JVM version (I use gradle 2.10 and JDK 1.8u72). Pick a project name then click “Finish”</li>
 <li>To enable the build, we need to first declare some dependencies, here I am using maven repositories to get required dependencies<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">group &apos;com.sample.gradle_sample&apos;</div><div class="line">version &apos;1.0-SNAPSHOT&apos;</div><div class="line"></div><div class="line">apply plugin: &apos;java&apos;</div><div class="line">apply plugin: &apos;war&apos;</div><div class="line"></div><div class="line">sourceCompatibility = 1.5</div><div class="line"></div><div class="line">repositories &#123;</div><div class="line">    mavenCentral()</div><div class="line">&#125;</div><div class="line"></div><div class="line">dependencies &#123;</div><div class="line">    compile &apos;javax.ws.rs:javax.ws.rs-api:2.0.1&apos;</div><div class="line">    compile &apos;com.sun.jersey:jersey-server:1.8&apos;</div><div class="line">    testCompile group: &apos;junit&apos;, name: &apos;junit&apos;, version: &apos;4.11&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>

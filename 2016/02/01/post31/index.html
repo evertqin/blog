@@ -102,13 +102,13 @@
 <meta property="og:url" content="https://evertqin.github.io/blog/2016/02/01/post31/index.html">
 <meta property="og:site_name" content="while(1);">
 <meta property="og:description" content="Having played with Nodejs for a while, I decided to try some other web framwwork for a change, having used Tomcat a little bit, I decide to try a simple java based restful service with Jersey + Tomcat">
-<meta property="og:image" content="https://evertqin.github.io/home/ruogu/Pictures/post31/choose_gradle.png">
-<meta property="og:image" content="https://evertqin.github.io/home/ruogu/Pictures/post31/gradle_jobs.png">
-<meta property="og:updated_time" content="2017-06-23T21:44:44.325Z">
+<meta property="og:image" content="http://i.imgur.com/YAGZPPj.png">
+<meta property="og:image" content="http://i.imgur.com/6o37hyg.png">
+<meta property="og:updated_time" content="2017-06-26T16:50:18.260Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Setup Jersey Restful service in Intellij">
 <meta name="twitter:description" content="Having played with Nodejs for a while, I decided to try some other web framwwork for a change, having used Tomcat a little bit, I decide to try a simple java based restful service with Jersey + Tomcat">
-<meta name="twitter:image" content="https://evertqin.github.io/home/ruogu/Pictures/post31/choose_gradle.png">
+<meta name="twitter:image" content="http://i.imgur.com/YAGZPPj.png">
 
 
 
@@ -359,7 +359,7 @@
         <p>Having played with Nodejs for a while, I decided to try some other web framwwork for a change, having used Tomcat a little bit, I decide to try a simple java based restful service with Jersey + Tomcat. Most of the online tutorials are based on eclipse or based on maven. Here I am using Intellij with gradle. I used <a href="https://github.com/jasonray/jersey-starterkit/wiki/Create-a-&quot;Hello-World&quot;-jersey-project" target="_blank" rel="external">this article</a> as reference.</p>
 <a id="more"></a>
 <ol>
-<li>Start a new project and select gradle as project type. Also choose the Web as this may come handy in the future<br><img src="/home/ruogu/Pictures/post31/choose_gradle.png" alt="Choose gradle"></li>
+<li>Start a new project and select gradle as project type. Also choose the Web as this may come handy in the future<br><img src="http://i.imgur.com/YAGZPPj.png" alt="Choose gradle"></li>
 <li>Enter the GroupId and ArtifactId, then in the next screen, choose gradle version and JVM version (I use gradle 2.10 and JDK 1.8u72). Pick a project name then click “Finish”</li>
 <li><p>To enable the build, we need to first declare some dependencies, here I am using maven repositories to get required dependencies</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">group &apos;com.sample.gradle_sample&apos;</div><div class="line">version &apos;1.0-SNAPSHOT&apos;</div><div class="line"></div><div class="line">apply plugin: &apos;java&apos;</div><div class="line">apply plugin: &apos;war&apos;</div><div class="line"></div><div class="line">sourceCompatibility = 1.5</div><div class="line"></div><div class="line">repositories &#123;</div><div class="line">    mavenCentral()</div><div class="line">&#125;</div><div class="line"></div><div class="line">dependencies &#123;</div><div class="line">    compile &apos;javax.ws.rs:javax.ws.rs-api:2.0.1&apos;</div><div class="line">    compile &apos;com.sun.jersey:jersey-server:1.8&apos;</div><div class="line">    testCompile group: &apos;junit&apos;, name: &apos;junit&apos;, version: &apos;4.11&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -381,7 +381,7 @@
 </ul>
 </li>
 <li><p>Open <code>Gradle projects</code> tool window by going to View -&gt; Tool Windows -&gt; Gradles, click the blue “Refresh” button if there are any unresolved dependencies. Once everything is fine, excute <code>./gradlew war</code> in your project directory. This will generate a war file under ./build/libs.</p>
-<p> <img src="/home/ruogu/Pictures/post31/gradle_jobs.png" alt="refresh"></p>
+<p> <img src="http://i.imgur.com/6o37hyg.png" alt="refresh"></p>
 </li>
 <li>Make sure your Tomcat server is running, for setting up Tomcat, it is very straightforward, you can follow this <a href="http://www.vogella.com/tutorials/ApacheTomcat/article.html" target="_blank" rel="external">tutorial</a>, or there are tons of others over Google. Copy the war file from the previous step to the {Tomcat folder}/webapp, wait a bit till Tomcat pick up the war file.</li>
 <li>Now you can test it by going to <code>http://localhost:8080/gradle_sample-1.0-SNAPSHOT/rest/myresource</code>. This is ugly but you can change the name of the war file before dropping it to the Tomcat folder.</li>

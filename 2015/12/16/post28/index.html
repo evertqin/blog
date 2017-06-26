@@ -103,9 +103,9 @@
 <meta property="og:site_name" content="while(1);">
 <meta property="og:description" content="Consider the following scenario, we are creating a set of dropdowns each displays a series folders in a file system. User will click a dropdown to view all the folders (or files), then make a selectio">
 <meta property="og:image" content="http://i.imgur.com/rMInLfF.jpg=242x455">
-<meta property="og:image" content="https://evertqin.github.io/home/ruogu/projects/RogerBlog/post/post28/figure2.png">
+<meta property="og:image" content="http://i.imgur.com/vmev9q0.png">
 <meta property="og:image" content="http://i.imgur.com/iYVvuxh.gif">
-<meta property="og:updated_time" content="2017-06-23T21:44:12.174Z">
+<meta property="og:updated_time" content="2017-06-26T16:50:18.206Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Making a Ajax file structure browser with ReactJs Flux Pattern">
 <meta name="twitter:description" content="Consider the following scenario, we are creating a set of dropdowns each displays a series folders in a file system. User will click a dropdown to view all the folders (or files), then make a selectio">
@@ -364,7 +364,7 @@
 <p>From the figure, we can see a change event from the controls higher in the hierarchy triggers data change in the control lower in the hierarchy, which will then triggers the change of its lower hierarchical controls. This process will continue until there is no more downstream controls. There are nothing wrong with this approach, since it is very straightforward and simple. We essentially chain a unidirectional events together.</p>
 <p>Does “unidirectional” ring a bell? Yes, we keep this word in heart when we are practicing <a href="https://facebook.github.io/flux/docs/overview.html" target="_blank" rel="external">Flux Pattern</a>. The different is, in flux, it emchews a MVC pattern, ReactJS views are actually view-controllers whose responsiblities include retrieving data from stores and propagate them to children. Actions are usually user interactions with the views and they are propagated to the dispatchers who execute callbacks registered to that action to interact with corresponding store(s).</p>
 <p>My initial reaction is: we can use Flux pattern to create this structure, we can fit our scenario perfectly into Flux pattern. The following figures shows the modified Flux structure.</p>
-<p><img src="/home/ruogu/projects/RogerBlog/post/post28/figure2.png" alt="Modified Flux"></p>
+<p><img src="http://i.imgur.com/vmev9q0.png" alt="Modified Flux"></p>
 <p>Data flow is no different from the standard Flux. My change is: instead of creating separate store and view from different options, the stores can be derived from a single base store. If we are storing data of similar format, we event don’t need to create separate store, we can just use the base store directly. </p>
 <p>The views are derived from a single base view, and to achieve the chaining, instead of binding event listeners, we do this by class inheritance. For example, view0 has a method _onChange which does some ajax requests to fetch fresh data. View1 will inherit everything from view0 (which has everything already setup), and bind its own event handler to the events emitter of view0, such as <code>var BaseComponent = require(&#39;./AppComponent1&#39;);</code>(You will see this in <a href="#create-reactjs-components">Create ReactJs Components</a>)</p>
 <p>First everything I am doing here can be found on my GitHub (<a href="https://github.com/evertqin/flux-reactjs-chain-reactions" target="_blank" rel="external">https://github.com/evertqin/flux-reactjs-chain-reactions</a>). To run the demo, checkout everything then run</p>

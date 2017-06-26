@@ -102,13 +102,13 @@
 <meta property="og:url" content="https://evertqin.github.io/blog/2015/07/29/post13/index.html">
 <meta property="og:site_name" content="while(1);">
 <meta property="og:description" content="Create ASP.NET website with SignalRFrom asp.net, SignalR “is a library for ASP.NET developers that simplifies the process of adding real-time web functionality to applications. Real-time web functiona">
-<meta property="og:image" content="https://evertqin.github.io/home/ruogu/Pictures/SignalR/signalR_asp_net.png">
-<meta property="og:image" content="https://evertqin.github.io/home/ruogu/Pictures/SignalR/final_result.png">
-<meta property="og:updated_time" content="2017-06-23T21:43:06.593Z">
+<meta property="og:image" content="http://i.imgur.com/zG97g3C.png">
+<meta property="og:image" content="http://i.imgur.com/AmrCqC9.png">
+<meta property="og:updated_time" content="2017-06-26T16:50:17.980Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Combine WCF, ASP.NET, SignalR for event broadcasting (2)">
 <meta name="twitter:description" content="Create ASP.NET website with SignalRFrom asp.net, SignalR “is a library for ASP.NET developers that simplifies the process of adding real-time web functionality to applications. Real-time web functiona">
-<meta name="twitter:image" content="https://evertqin.github.io/home/ruogu/Pictures/SignalR/signalR_asp_net.png">
+<meta name="twitter:image" content="http://i.imgur.com/zG97g3C.png">
 
 
 
@@ -386,9 +386,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$(function() &#123;</div><div class="line">  var anaHub = $.connection.statusUpdateHandlerHub; // this is always the class name with the first letter lower case</div><div class="line"></div><div class="line">  anaHub.client.listenToStatus = function(message) &#123;</div><div class="line">      $(&quot;#statusDiv&quot;).html(message);</div><div class="line">  &#125;;</div><div class="line">  $.connection.hub.start().done(function() &#123;</div><div class="line">      anaHub.server.listenToStatus(); // similarly, this is the function name in the hub with the first letter lowered</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>Explanation: We first get a object of the hub by calling $.connection.{hubname}. Then we add a listenToStatus function to the clients. So we can invoke this from backend <code>Clients.All.listenToStatus(message);</code>  </p>
 <p>From the client, we also call the server function <code>listenToStatus</code> which is also defined in the Hub class <code>public void ListenToStatus() {...}</code></p>
-<p><img src="/home/ruogu/Pictures/SignalR/signalR_asp_net.png" alt="Complete SignalR Project"></p>
+<p><img src="http://i.imgur.com/zG97g3C.png" alt="Complete SignalR Project"></p>
 <p>Run the program, you should be able to see the ticking time now!</p>
-<p><img src="/home/ruogu/Pictures/SignalR/final_result.png" alt="Ticking Timer"></p>
+<p><img src="http://i.imgur.com/AmrCqC9.png" alt="Ticking Timer"></p>
 <p>Source code can be found on <a href="https://github.com/evertqin/DotNetDemos/tree/master/SignalR_ASP_WCF" target="_blank" rel="external">GitHub</a></p>
 
       
