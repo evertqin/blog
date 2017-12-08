@@ -273,133 +273,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://evertqin.github.io/blog/blog/2015/10/08/post23/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="R Qin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="while(1);">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2015/10/08/post23/" itemprop="url">Bring Together RequireJS and AngularJS</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-10-08T00:00:00-04:00">
-                2015-10-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/blog/2015/10/08/post23/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2015/10/08/post23/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Recently, I accidentally poked into the frontend development code of some company. That website does not use too many frontend<br>frameworks except for jQuery and another one I am going to talk about today – RequireJS.</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/2015/10/08/post23/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://evertqin.github.io/blog/blog/2015/10/01/post21/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1285,6 +1158,133 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://evertqin.github.io/blog/blog/2015/08/03/post15/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="R Qin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="while(1);">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2015/08/03/post15/" itemprop="url">C# and C++ Interop Demonstration</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-08-03T00:00:00-04:00">
+                2015-08-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/2015/08/03/post15/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2015/08/03/post15/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>One interesting feature of C# is that you can directly use unmanaged dlls from the managed code. There are different ways to do this, such as: 1) using a unsafe block and write unmanaged code directly. It is tested that the performance of these unmanaged codes is somewhate better than managed code. 2) use Marshall and dllimport from C# and dllexport from C++; 3) use 3rd party libraries such as swig.exe. Here I am going to introduce using dllimport because I think this is the most native way to deal with interop requirements.</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2015/08/03/post15/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://evertqin.github.io/blog/blog/2015/08/03/post14/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1412,7 +1412,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://evertqin.github.io/blog/blog/2015/08/03/post15/">
+    <link itemprop="mainEntityOfPage" href="https://evertqin.github.io/blog/blog/2015/07/29/post13/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="R Qin">
@@ -1431,7 +1431,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2015/08/03/post15/" itemprop="url">C# and C++ Interop Demonstration</a></h2>
+                <a class="post-title-link" href="/blog/2015/07/29/post13/" itemprop="url">Combine WCF, ASP.NET, SignalR for event broadcasting (2)</a></h2>
         
 
         <div class="post-meta">
@@ -1443,8 +1443,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-08-03T00:00:00-04:00">
-                2015-08-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-07-29T00:00:00-04:00">
+                2015-07-29
               </time>
             
 
@@ -1462,9 +1462,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/blog/2015/08/03/post15/#comments" itemprop="discussionUrl">
+                <a href="/blog/2015/07/29/post13/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2015/08/03/post15/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2015/07/29/post13/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1490,10 +1490,10 @@
 
       
         
-          <p>One interesting feature of C# is that you can directly use unmanaged dlls from the managed code. There are different ways to do this, such as: 1) using a unsafe block and write unmanaged code directly. It is tested that the performance of these unmanaged codes is somewhate better than managed code. 2) use Marshall and dllimport from C# and dllexport from C++; 3) use 3rd party libraries such as swig.exe. Here I am going to introduce using dllimport because I think this is the most native way to deal with interop requirements.</p>
+          <h4 id="Create-ASP-NET-website-with-SignalR"><a href="#Create-ASP-NET-website-with-SignalR" class="headerlink" title="Create ASP.NET website with SignalR"></a>Create ASP.NET website with SignalR</h4><p>From <a href="http://www.asp.net/signalr/overview/getting-started/introduction-to-signalr" target="_blank" rel="external">asp.net</a>, SignalR <em>“is a library for ASP.NET developers that simplifies the process of adding real-time web functionality to applications. Real-time web functionality is the ability to have server code push content to connected clients instantly as it becomes available, rather than having the server wait for a client to request new data.”</em> with signalR, it is relatively easy to create a socket between frontend an backend so we can pass data bi-directionally.</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/blog/2015/08/03/post15/#more" rel="contents">
+            <a class="btn" href="/blog/2015/07/29/post13/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1579,7 +1579,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/blog/archives/">
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
