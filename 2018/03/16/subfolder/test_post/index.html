@@ -75,7 +75,7 @@
 <link href="/blog/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Technology,SQL," />
+  <meta name="keywords" content="Technology,Programming," />
 
 
 
@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="Something we need to convert a table into delimited string for, say, log or exception message, there are three ways to do it in TSQL">
-<meta name="keywords" content="Technology,SQL">
+<meta name="description" content="This is a test">
+<meta name="keywords" content="Technology,Programming">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Convert table to delimited string">
-<meta property="og:url" content="https://evertqin.github.io/blog/2016/02/04/post33/index.html">
+<meta property="og:title" content="Testing folder">
+<meta property="og:url" content="https://evertqin.github.io/blog/2018/03/16/subfolder/test_post/index.html">
 <meta property="og:site_name" content="while(1);">
-<meta property="og:description" content="Something we need to convert a table into delimited string for, say, log or exception message, there are three ways to do it in TSQL">
-<meta property="og:updated_time" content="2017-06-26T16:50:18.284Z">
+<meta property="og:description" content="This is a test">
+<meta property="og:updated_time" content="2018-03-16T19:04:10.781Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Convert table to delimited string">
-<meta name="twitter:description" content="Something we need to convert a table into delimited string for, say, log or exception message, there are three ways to do it in TSQL">
+<meta name="twitter:title" content="Testing folder">
+<meta name="twitter:description" content="This is a test">
 
 
 
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="https://evertqin.github.io/blog/2016/02/04/post33/"/>
+  <link rel="canonical" href="https://evertqin.github.io/blog/2018/03/16/subfolder/test_post/"/>
 
 
 
 
 
-  <title>Convert table to delimited string | while(1);</title>
+  <title>Testing folder | while(1);</title>
   
 
 
@@ -276,7 +276,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://evertqin.github.io/blog/blog/2016/02/04/post33/">
+    <link itemprop="mainEntityOfPage" href="https://evertqin.github.io/blog/blog/2018/03/16/subfolder/test_post/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="R Qin">
@@ -293,7 +293,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Convert table to delimited string</h2>
+          <h2 class="post-title" itemprop="name headline">Testing folder</h2>
         
 
         <div class="post-meta">
@@ -305,8 +305,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-02-04T00:00:00-05:00">
-                2016-02-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-16T00:00:00-04:00">
+                2018-03-16
               </time>
             
 
@@ -324,9 +324,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/blog/2016/02/04/post33/#comments" itemprop="discussionUrl">
+                <a href="/blog/2018/03/16/subfolder/test_post/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/02/04/post33/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/03/16/subfolder/test_post/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -351,11 +351,8 @@
       
 
       
-        <p>Something we need to convert a table into delimited string for, say, log or exception message, there are three ways to do it in TSQL</p>
-<a id="more"></a>
-<h4 id="Aggregate-with-variable"><a href="#Aggregate-with-variable" class="headerlink" title="Aggregate with variable"></a>Aggregate with variable</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">DECLARE @Result NVARCHAR(2000) = N&apos;&apos; /*Important! Assign empty string to the return variable*/</div><div class="line"></div><div class="line">SELECT @Result = @Result + CONVERT(NVARCHAR(100), ID) + N&apos;,&apos; </div><div class="line">    FROM @Table</div><div class="line">SET @Result = SUBSTRING(@Result, 0, LEN(@Result)) /* Need to remove trailing delimiter*/</div></pre></td></tr></table></figure>
-<h4 id="Use-XML-PATH"><a href="#Use-XML-PATH" class="headerlink" title="Use XML PATH"></a>Use XML PATH</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">DECLARE @Result NVARCHAR(2000) /* Initial assignment is optional */</div><div class="line"></div><div class="line">SELECT @Result = STUFF((SELECT &apos;,&apos; + CONVERT(NVARCHAR(100), ID) + &apos;,&apos; + Description FROM @Result FOR XML PATH(&apos;&apos;)), 1, 1, &apos;&apos; )</div></pre></td></tr></table></figure>
-<h4 id="Use-COALESCE"><a href="#Use-COALESCE" class="headerlink" title="Use COALESCE"></a>Use COALESCE</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">DECLARE @result NVARCHAR(1000) = N&apos;&apos;</div><div class="line"></div><div class="line">SELECT @result = COALESCE(@result + &apos;,&apos;, &apos;&apos;) + description FROM targetingservice</div></pre></td></tr></table></figure>
+        <p>This is a test</p>
+
       
     </div>
 
@@ -386,7 +383,7 @@
           
             <a href="/blog/tags/Technology/" rel="tag"># Technology</a>
           
-            <a href="/blog/tags/SQL/" rel="tag"># SQL</a>
+            <a href="/blog/tags/Programming/" rel="tag"># Programming</a>
           
         </div>
       
@@ -399,8 +396,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2016/02/03/post32/" rel="next" title="sp_executesql in Transact-SQL">
-                <i class="fa fa-chevron-left"></i> sp_executesql in Transact-SQL
+              <a href="/blog/2016/02/04/post33/" rel="next" title="Convert table to delimited string">
+                <i class="fa fa-chevron-left"></i> Convert table to delimited string
               </a>
             
           </div>
@@ -408,10 +405,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/2018/03/16/subfolder/test_post/" rel="prev" title="Testing folder">
-                Testing folder <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -465,17 +458,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/blog/images/avatar.gif"
@@ -535,22 +519,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Aggregate-with-variable"><span class="nav-number">1.</span> <span class="nav-text">Aggregate with variable</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Use-XML-PATH"><span class="nav-number">2.</span> <span class="nav-text">Use XML PATH</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Use-COALESCE"><span class="nav-number">3.</span> <span class="nav-text">Use COALESCE</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -688,9 +656,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://evertqin.github.io/blog/2016/02/04/post33/';
-          this.page.identifier = '2016/02/04/post33/';
-          this.page.title = 'Convert table to delimited string';
+          this.page.url = 'https://evertqin.github.io/blog/2018/03/16/subfolder/test_post/';
+          this.page.identifier = '2018/03/16/subfolder/test_post/';
+          this.page.title = 'Testing folder';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://tripplaninfo.disqus.com/embed.js';
