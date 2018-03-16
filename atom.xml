@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://evertqin.github.io/blog/"/>
-  <updated>2018-03-16T19:09:39.898Z</updated>
+  <updated>2018-03-16T19:33:28.013Z</updated>
   <id>https://evertqin.github.io/blog/</id>
   
   <author>
@@ -16,26 +16,22 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Testing folder</title>
-    <link href="https://evertqin.github.io/blog/2018/03/16/subfolder/test_post/"/>
-    <id>https://evertqin.github.io/blog/2018/03/16/subfolder/test_post/</id>
-    <published>2018-03-16T04:00:00.000Z</published>
-    <updated>2018-03-16T19:09:39.898Z</updated>
+    <title>try_something_new</title>
+    <link href="https://evertqin.github.io/blog/2018/03/16/try-something-new/"/>
+    <id>https://evertqin.github.io/blog/2018/03/16/try-something-new/</id>
+    <published>2018-03-16T19:33:07.000Z</published>
+    <updated>2018-03-16T19:33:28.013Z</updated>
     
-    <content type="html"><![CDATA[<p>This is a test. I am doing the test.</p>
+    <content type="html"><![CDATA[<p>I am going to try something new.</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;This is a test. I am doing the test.&lt;/p&gt;
+      &lt;p&gt;I am going to try something new.&lt;/p&gt;
 
     
     </summary>
     
-    
-      <category term="Technology" scheme="https://evertqin.github.io/blog/tags/Technology/"/>
-    
-      <category term="Programming" scheme="https://evertqin.github.io/blog/tags/Programming/"/>
     
   </entry>
   
@@ -507,6 +503,30 @@
   </entry>
   
   <entry>
+    <title>Note of some libraries</title>
+    <link href="https://evertqin.github.io/blog/2015/10/01/post21/"/>
+    <id>https://evertqin.github.io/blog/2015/10/01/post21/</id>
+    <published>2015-10-01T04:00:00.000Z</published>
+    <updated>2017-06-26T16:50:18.131Z</updated>
+    
+    <content type="html"><![CDATA[<p>(PlaceHolder)</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;(PlaceHolder)&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+      <category term="Technology" scheme="https://evertqin.github.io/blog/tags/Technology/"/>
+    
+      <category term="Javascript" scheme="https://evertqin.github.io/blog/tags/Javascript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>React.js Study Note (2) - Making a simple dynamic router</title>
     <link href="https://evertqin.github.io/blog/2015/10/01/post22/"/>
     <id>https://evertqin.github.io/blog/2015/10/01/post22/</id>
@@ -555,30 +575,6 @@
       <category term="Javascript" scheme="https://evertqin.github.io/blog/tags/Javascript/"/>
     
       <category term="ReactJS" scheme="https://evertqin.github.io/blog/tags/ReactJS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Note of some libraries</title>
-    <link href="https://evertqin.github.io/blog/2015/10/01/post21/"/>
-    <id>https://evertqin.github.io/blog/2015/10/01/post21/</id>
-    <published>2015-10-01T04:00:00.000Z</published>
-    <updated>2017-06-26T16:50:18.131Z</updated>
-    
-    <content type="html"><![CDATA[<p>(PlaceHolder)</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;(PlaceHolder)&lt;/p&gt;
-
-    
-    </summary>
-    
-    
-      <category term="Technology" scheme="https://evertqin.github.io/blog/tags/Technology/"/>
-    
-      <category term="Javascript" scheme="https://evertqin.github.io/blog/tags/Javascript/"/>
     
   </entry>
   
@@ -835,6 +831,43 @@ The above function update the element text of the scope every second.
   </entry>
   
   <entry>
+    <title>Transfering Data between ASP.NET Client and Server</title>
+    <link href="https://evertqin.github.io/blog/2015/08/03/post14/"/>
+    <id>https://evertqin.github.io/blog/2015/08/03/post14/</id>
+    <published>2015-08-03T04:00:00.000Z</published>
+    <updated>2017-06-26T16:50:17.988Z</updated>
+    
+    <content type="html"><![CDATA[<p>Here I am going to summarize commonly used ways to pass data between server and client. There are traditional ways along with some ASP.NET specific ways.</p>
+<a id="more"></a>
+<ol>
+<li><p>Ajax request, using jQuery Library, if you are using webforms, then:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">  type: &quot;POST&quot;,</div><div class="line">  url: &quot;Analysis.aspx/getStatus&quot;,</div><div class="line">  data: &#123;&#125;,</div><div class="line">  contentType: &quot;application/json; charset=utf-8&quot;,</div><div class="line">  dataType: &quot;json&quot;,</div><div class="line">  success: function (message) &#123;</div><div class="line">    console.log(message);</div><div class="line">  &#125;,</div><div class="line">  error: function(xhr, status, error) &#123;</div><div class="line">    console.log(xhr);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p> In your code behind (Analysis.aspx.cs), you should have a public static method:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">using System.Web.Services;</div><div class="line"></div><div class="line">[WebMethod]</div><div class="line">public static string GetStatus()</div><div class="line">&#123;</div><div class="line">  return this.message;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p> In MVC model, it is simpler because you only needs to provide your restful service endpoint to the url field.</p>
+<p> The advantage of using ajax is 1) it is excuted immediately after html is loaded and it is synchronized.</p>
+</li>
+<li><p>Using code block<br> The above code behind can also be called be embedding the following line into your javascript part of the page:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var message = &quot;&lt;% GetStatus() %&gt;&quot;;</div></pre></td></tr></table></figure>
+<p> Note that by default the evaluated return for a code behind function does not include quotes, so if it is a string type, you have to add quotes manually.</p>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Here I am going to summarize commonly used ways to pass data between server and client. There are traditional ways along with some ASP.NET specific ways.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Technology" scheme="https://evertqin.github.io/blog/tags/Technology/"/>
+    
+      <category term="C#" scheme="https://evertqin.github.io/blog/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>C# and C++ Interop Demonstration</title>
     <link href="https://evertqin.github.io/blog/2015/08/03/post15/"/>
     <id>https://evertqin.github.io/blog/2015/08/03/post15/</id>
@@ -889,43 +922,6 @@ The above function update the element text of the scope every second.
     <summary type="html">
     
       &lt;p&gt;One interesting feature of C# is that you can directly use unmanaged dlls from the managed code. There are different ways to do this, such as: 1) using a unsafe block and write unmanaged code directly. It is tested that the performance of these unmanaged codes is somewhate better than managed code. 2) use Marshall and dllimport from C# and dllexport from C++; 3) use 3rd party libraries such as swig.exe. Here I am going to introduce using dllimport because I think this is the most native way to deal with interop requirements.&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Technology" scheme="https://evertqin.github.io/blog/tags/Technology/"/>
-    
-      <category term="C#" scheme="https://evertqin.github.io/blog/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Transfering Data between ASP.NET Client and Server</title>
-    <link href="https://evertqin.github.io/blog/2015/08/03/post14/"/>
-    <id>https://evertqin.github.io/blog/2015/08/03/post14/</id>
-    <published>2015-08-03T04:00:00.000Z</published>
-    <updated>2017-06-26T16:50:17.988Z</updated>
-    
-    <content type="html"><![CDATA[<p>Here I am going to summarize commonly used ways to pass data between server and client. There are traditional ways along with some ASP.NET specific ways.</p>
-<a id="more"></a>
-<ol>
-<li><p>Ajax request, using jQuery Library, if you are using webforms, then:</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">  type: &quot;POST&quot;,</div><div class="line">  url: &quot;Analysis.aspx/getStatus&quot;,</div><div class="line">  data: &#123;&#125;,</div><div class="line">  contentType: &quot;application/json; charset=utf-8&quot;,</div><div class="line">  dataType: &quot;json&quot;,</div><div class="line">  success: function (message) &#123;</div><div class="line">    console.log(message);</div><div class="line">  &#125;,</div><div class="line">  error: function(xhr, status, error) &#123;</div><div class="line">    console.log(xhr);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p> In your code behind (Analysis.aspx.cs), you should have a public static method:</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">using System.Web.Services;</div><div class="line"></div><div class="line">[WebMethod]</div><div class="line">public static string GetStatus()</div><div class="line">&#123;</div><div class="line">  return this.message;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p> In MVC model, it is simpler because you only needs to provide your restful service endpoint to the url field.</p>
-<p> The advantage of using ajax is 1) it is excuted immediately after html is loaded and it is synchronized.</p>
-</li>
-<li><p>Using code block<br> The above code behind can also be called be embedding the following line into your javascript part of the page:</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var message = &quot;&lt;% GetStatus() %&gt;&quot;;</div></pre></td></tr></table></figure>
-<p> Note that by default the evaluated return for a code behind function does not include quotes, so if it is a string type, you have to add quotes manually.</p>
-</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Here I am going to summarize commonly used ways to pass data between server and client. There are traditional ways along with some ASP.NET specific ways.&lt;/p&gt;
     
     </summary>
     
