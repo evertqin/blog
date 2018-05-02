@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://evertqin.github.io/blog/"/>
-  <updated>2017-06-26T16:50:18.284Z</updated>
+  <updated>2018-05-02T12:25:45.654Z</updated>
   <id>https://evertqin.github.io/blog/</id>
   
   <author>
@@ -16,11 +16,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>西班牙旅行记</title>
+    <link href="https://evertqin.github.io/blog/2018/04/15/2018_04_14_trip_to_spain/"/>
+    <id>https://evertqin.github.io/blog/2018/04/15/2018_04_14_trip_to_spain/</id>
+    <published>2018-04-15T04:00:00.000Z</published>
+    <updated>2018-05-02T12:25:45.654Z</updated>
+    
+    <content type="html"><![CDATA[<p>2018年的头等大事就是这次旅行了吧</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2018年的头等大事就是这次旅行了吧&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+      <category term="Spain" scheme="https://evertqin.github.io/blog/tags/Spain/"/>
+    
+      <category term="Travel" scheme="https://evertqin.github.io/blog/tags/Travel/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Convert table to delimited string</title>
     <link href="https://evertqin.github.io/blog/2016/02/04/post33/"/>
     <id>https://evertqin.github.io/blog/2016/02/04/post33/</id>
     <published>2016-02-04T05:00:00.000Z</published>
-    <updated>2017-06-26T16:50:18.284Z</updated>
+    <updated>2017-06-26T16:50:18.000Z</updated>
     
     <content type="html"><![CDATA[<p>Something we need to convert a table into delimited string for, say, log or exception message, there are three ways to do it in TSQL</p>
 <a id="more"></a>
@@ -46,7 +70,7 @@
     <link href="https://evertqin.github.io/blog/2016/02/03/post32/"/>
     <id>https://evertqin.github.io/blog/2016/02/03/post32/</id>
     <published>2016-02-03T05:00:00.000Z</published>
-    <updated>2017-06-26T16:50:18.280Z</updated>
+    <updated>2017-06-26T16:50:18.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Why-we-want-to-use-sp-executesql"><a href="#Why-we-want-to-use-sp-executesql" class="headerlink" title="Why we want to use sp_executesql"></a>Why we want to use sp_executesql</h1><p>One use case for this stored procedure is when we need to do parameterized linked query using <code>OPENQUERY</code>. I could have constructed a string with the parameter decorated by some special characters such as <code></code> (This resembles the handlebar a lot, or AngularJS) and use <code>EXEC</code> to execute the query. However, a fundamental flaw with that approach is that I will not be able to return a value since the query cannot be parameterized. With the help of sp_executesql, we are able to provide input and output parameters</p>
 <a id="more"></a>
@@ -76,9 +100,9 @@
     <link href="https://evertqin.github.io/blog/2016/02/01/post31/"/>
     <id>https://evertqin.github.io/blog/2016/02/01/post31/</id>
     <published>2016-02-01T05:00:00.000Z</published>
-    <updated>2017-06-26T16:50:18.260Z</updated>
+    <updated>2018-04-12T20:21:14.000Z</updated>
     
-    <content type="html"><![CDATA[<p>Having played with Nodejs for a while, I decided to try some other web framwwork for a change, having used Tomcat a little bit, I decide to try a simple java based restful service with Jersey + Tomcat. Most of the online tutorials are based on eclipse or based on maven. Here I am using Intellij with gradle. I used <a href="https://github.com/jasonray/jersey-starterkit/wiki/Create-a-&quot;Hello-World&quot;-jersey-project" target="_blank" rel="external">this article</a> as reference.</p>
+    <content type="html"><![CDATA[<p>Having played with Nodejs for a while, I decided to try some other web framewwork for a change, having used Tomcat a little bit, I decide to try a simple java based restful service with Jersey + Tomcat. Most of the online tutorials are based on eclipse or based on maven. Here I am using Intellij with gradle. I used <a href="https://github.com/jasonray/jersey-starterkit/wiki/Create-a-&quot;Hello-World&quot;-jersey-project" target="_blank" rel="external">this article</a> as reference.</p>
 <a id="more"></a>
 <ol>
 <li>Start a new project and select gradle as project type. Also choose the Web as this may come handy in the future<br><img src="http://i.imgur.com/YAGZPPj.png" alt="Choose gradle"></li>
@@ -112,7 +136,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;Having played with Nodejs for a while, I decided to try some other web framwwork for a change, having used Tomcat a little bit, I decide to try a simple java based restful service with Jersey + Tomcat. Most of the online tutorials are based on eclipse or based on maven. Here I am using Intellij with gradle. I used &lt;a href=&quot;https://github.com/jasonray/jersey-starterkit/wiki/Create-a-&amp;quot;Hello-World&amp;quot;-jersey-project&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;this article&lt;/a&gt; as reference.&lt;/p&gt;
+      &lt;p&gt;Having played with Nodejs for a while, I decided to try some other web framewwork for a change, having used Tomcat a little bit, I decide to try a simple java based restful service with Jersey + Tomcat. Most of the online tutorials are based on eclipse or based on maven. Here I am using Intellij with gradle. I used &lt;a href=&quot;https://github.com/jasonray/jersey-starterkit/wiki/Create-a-&amp;quot;Hello-World&amp;quot;-jersey-project&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;this article&lt;/a&gt; as reference.&lt;/p&gt;
     
     </summary>
     
@@ -130,7 +154,7 @@
     <link href="https://evertqin.github.io/blog/2016/01/01/post29/"/>
     <id>https://evertqin.github.io/blog/2016/01/01/post29/</id>
     <published>2016-01-01T05:00:00.000Z</published>
-    <updated>2017-06-26T16:50:18.214Z</updated>
+    <updated>2017-06-26T16:50:18.000Z</updated>
     
     <content type="html"><![CDATA[<p>我在写这个开头的时候，脑中跳出的头一句是：“2015是变革的一年，是发展的一年，是丰收的一年”。可以是觉得有点写思想汇报即视感，于是作罢。<br>想要写点什么新奇的东西，可以又觉得任凭我怎么总结2015都会有所疏漏，因而作此文不为总结，只为留下些东西，权作日后的参考。</p>
 <a id="more"></a>
@@ -182,7 +206,7 @@
     <link href="https://evertqin.github.io/blog/2015/12/16/post28/"/>
     <id>https://evertqin.github.io/blog/2015/12/16/post28/</id>
     <published>2015-12-16T05:00:00.000Z</published>
-    <updated>2017-08-10T18:20:15.856Z</updated>
+    <updated>2017-06-26T16:50:18.000Z</updated>
     
     <content type="html"><![CDATA[<p>Consider the following scenario, we are creating a set of dropdowns each displays a series folders in a file system. User will click a dropdown to view all the folders (or files), then make a selection. After selection is made, all the dropdowns following the one user interacted with will change to show the subfolders (or files, if there are any) in the folder the user has selected.</p>
 <a id="more"></a>
@@ -268,7 +292,7 @@
     <link href="https://evertqin.github.io/blog/2015/11/24/post27/"/>
     <id>https://evertqin.github.io/blog/2015/11/24/post27/</id>
     <published>2015-11-24T05:00:00.000Z</published>
-    <updated>2017-06-26T16:50:18.183Z</updated>
+    <updated>2017-06-26T16:50:18.000Z</updated>
     
     <content type="html"><![CDATA[<p>Major change has been made to ReactJS: JSXTransformer was deprecated, <a href="https://facebook.github.io/react/docs/getting-started.html" target="_blank" rel="external">Babel with Browserify</a> is now the recommended way to transcribe the jsx files. I am documenting the setup process hoping it will be helpful in the future.</p>
 <a id="more"></a>
@@ -334,7 +358,7 @@
     <link href="https://evertqin.github.io/blog/2015/11/08/post26/"/>
     <id>https://evertqin.github.io/blog/2015/11/08/post26/</id>
     <published>2015-11-08T05:00:00.000Z</published>
-    <updated>2017-06-26T16:50:18.180Z</updated>
+    <updated>2017-06-26T16:50:18.000Z</updated>
     
     <content type="html"><![CDATA[<p>John Resig’s book ‘Secretes of the JavaScript Ninja’ is really a fun and inspiring masterpiece to read. I believe it is one of the JavaScript book you should keep on your desk for study and reference. I am going to write something to summarize some important and interesting usages of .call(), .apply() and .bind() for my reference.</p>
 <a id="more"></a>
@@ -370,7 +394,7 @@
     <link href="https://evertqin.github.io/blog/2015/11/04/post25/"/>
     <id>https://evertqin.github.io/blog/2015/11/04/post25/</id>
     <published>2015-11-04T05:00:00.000Z</published>
-    <updated>2017-06-26T16:50:18.176Z</updated>
+    <updated>2017-06-26T16:50:18.000Z</updated>
     
     <content type="html"><![CDATA[<p>I have been working with <a href="http://ilnumerics.net/" target="_blank" rel="external">ILNumerics.NET</a> for quite a while. It is a fine piece of mathmatical library which provides better performance than most of the other .NET numeric libraries. Used properly, it’s performance can also surpass that of MATLAB.</p>
 <a id="more"></a>
@@ -407,7 +431,7 @@
     <link href="https://evertqin.github.io/blog/2015/10/20/post24/"/>
     <id>https://evertqin.github.io/blog/2015/10/20/post24/</id>
     <published>2015-10-20T04:00:00.000Z</published>
-    <updated>2017-06-26T16:50:18.168Z</updated>
+    <updated>2017-06-26T16:50:18.000Z</updated>
     
     <content type="html"><![CDATA[<p>An interesting problem, given some numbers, group them into individual sets based on certain rules. For example, for numbers between, we group them into sets (0, 0), [1, 5), [10, 30), [30, 60), [60, 100]. I found this <a href="https://www.topcoder.com/community/data-science/data-science-tutorials/disjoint-set-data-structures/" target="_blank" rel="external">article</a> on topcode is very helpful. Below is an implementation in C++.</p>
 <a id="more"></a>
@@ -434,7 +458,7 @@
     <link href="https://evertqin.github.io/blog/2015/10/08/post23/"/>
     <id>https://evertqin.github.io/blog/2015/10/08/post23/</id>
     <published>2015-10-08T04:00:00.000Z</published>
-    <updated>2017-06-26T16:50:18.164Z</updated>
+    <updated>2017-06-26T16:50:18.000Z</updated>
     
     <content type="html"><![CDATA[<p>Recently, I accidentally poked into the frontend development code of some company. That website does not use too many frontend<br>frameworks except for jQuery and another one I am going to talk about today – RequireJS.</p>
 <a id="more"></a>
@@ -487,7 +511,7 @@
     <link href="https://evertqin.github.io/blog/2015/10/01/post21/"/>
     <id>https://evertqin.github.io/blog/2015/10/01/post21/</id>
     <published>2015-10-01T04:00:00.000Z</published>
-    <updated>2017-06-26T16:50:18.131Z</updated>
+    <updated>2017-06-26T16:50:18.000Z</updated>
     
     <content type="html"><![CDATA[<p>(PlaceHolder)</p>
 ]]></content>
@@ -511,7 +535,7 @@
     <link href="https://evertqin.github.io/blog/2015/10/01/post22/"/>
     <id>https://evertqin.github.io/blog/2015/10/01/post22/</id>
     <published>2015-10-01T04:00:00.000Z</published>
-    <updated>2017-06-26T16:50:18.159Z</updated>
+    <updated>2017-06-26T16:50:18.000Z</updated>
     
     <content type="html"><![CDATA[<p>I am exploring ReactJS a bit further. I think the key part to understand is how data flows between compoents. The rule is “Data (props) flows from parents to children while events bubble up from children to parents. State or props change will cause compoents to refresh.”. With this in mind it is easy to create a dynamic UI. Today, I am going to create a simple UI that gets all the svgs from a static folder, and give user a list of svg files so they can choose to display selected svg. This is like a very simple file server.</p>
 <a id="more"></a>
@@ -563,7 +587,7 @@
     <link href="https://evertqin.github.io/blog/2015/09/24/post20/"/>
     <id>https://evertqin.github.io/blog/2015/09/24/post20/</id>
     <published>2015-09-24T04:00:00.000Z</published>
-    <updated>2017-06-26T16:50:18.125Z</updated>
+    <updated>2017-06-26T16:50:18.000Z</updated>
     
     <content type="html"><![CDATA[<p>I am doing a new project recently so I am trying to follow the react.js tutorial and make use of this new technology in my project. It is claimed that the concept of react.js is fondamentally different from AngularJS. For example AngularJS is a full MVC framework but ReactJS is only the View of the MVC. The following figure demonstrated the whole concept.</p>
 <a id="more"></a>
@@ -597,7 +621,7 @@
     <link href="https://evertqin.github.io/blog/2015/08/26/post19/"/>
     <id>https://evertqin.github.io/blog/2015/08/26/post19/</id>
     <published>2015-08-26T04:00:00.000Z</published>
-    <updated>2017-06-26T16:50:18.087Z</updated>
+    <updated>2017-06-26T16:50:18.000Z</updated>
     
     <content type="html"><![CDATA[<p>Tried a little big ngView and ngRoute, the basic concept is not so difficult to grasp. It is like regular V and C in MVC.<br>The function of this ngApp is to display different images when click on different links. Traditionally, using jQuery, we can just update the src of the image.<br>This ngApp is just for demo, i don’t think it has more advantage than just using jQuery. But it does quite fun to think of this in a VC way.</p>
 <a id="more"></a>
@@ -628,7 +652,7 @@
     <link href="https://evertqin.github.io/blog/2015/08/25/post18/"/>
     <id>https://evertqin.github.io/blog/2015/08/25/post18/</id>
     <published>2015-08-25T04:00:00.000Z</published>
-    <updated>2017-06-26T16:50:18.080Z</updated>
+    <updated>2017-06-26T16:50:18.000Z</updated>
     
     <content type="html"><![CDATA[<p>Other Random notes about angularjs, I will add more to this.     </p>
 <a id="more"></a>
@@ -703,7 +727,7 @@ The above function update the element text of the scope every second.
     <link href="https://evertqin.github.io/blog/2015/08/24/post17/"/>
     <id>https://evertqin.github.io/blog/2015/08/24/post17/</id>
     <published>2015-08-24T04:00:00.000Z</published>
-    <updated>2017-06-26T16:50:18.067Z</updated>
+    <updated>2017-06-26T16:50:18.000Z</updated>
     
     <content type="html"><![CDATA[<p>I have been learning AngularJS recently. Although people say Angular might be okay for small scale websites, it becomes very slow as the website grow larger. Many people turn to React.js for better performace. But I do think it<br>is useful to learn the concept of Angular since it has been there for quite a while and there are a lot of cool concepts.</p>
 <a id="more"></a>
@@ -770,7 +794,7 @@ The above function update the element text of the scope every second.
     <link href="https://evertqin.github.io/blog/2015/08/05/post16/"/>
     <id>https://evertqin.github.io/blog/2015/08/05/post16/</id>
     <published>2015-08-05T04:00:00.000Z</published>
-    <updated>2017-06-26T16:50:18.060Z</updated>
+    <updated>2017-06-26T16:50:18.000Z</updated>
     
     <content type="html"><![CDATA[<p>Today I committed a modifed version of Python-Markdown. Previously, this pip library only supports fenced block at document root level. It is quite inconvenient as often times, we need to nest a code blog inside an ordered list. You can check my <a href="http://blog.tripplan.info/blog/post/item/14" target="_blank" rel="external">previous post</a> for a demo.</p>
 <a id="more"></a>
@@ -811,11 +835,48 @@ The above function update the element text of the scope every second.
   </entry>
   
   <entry>
+    <title>Transfering Data between ASP.NET Client and Server</title>
+    <link href="https://evertqin.github.io/blog/2015/08/03/post14/"/>
+    <id>https://evertqin.github.io/blog/2015/08/03/post14/</id>
+    <published>2015-08-03T04:00:00.000Z</published>
+    <updated>2017-06-26T16:50:17.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Here I am going to summarize commonly used ways to pass data between server and client. There are traditional ways along with some ASP.NET specific ways.</p>
+<a id="more"></a>
+<ol>
+<li><p>Ajax request, using jQuery Library, if you are using webforms, then:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">  type: &quot;POST&quot;,</div><div class="line">  url: &quot;Analysis.aspx/getStatus&quot;,</div><div class="line">  data: &#123;&#125;,</div><div class="line">  contentType: &quot;application/json; charset=utf-8&quot;,</div><div class="line">  dataType: &quot;json&quot;,</div><div class="line">  success: function (message) &#123;</div><div class="line">    console.log(message);</div><div class="line">  &#125;,</div><div class="line">  error: function(xhr, status, error) &#123;</div><div class="line">    console.log(xhr);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p> In your code behind (Analysis.aspx.cs), you should have a public static method:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">using System.Web.Services;</div><div class="line"></div><div class="line">[WebMethod]</div><div class="line">public static string GetStatus()</div><div class="line">&#123;</div><div class="line">  return this.message;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p> In MVC model, it is simpler because you only needs to provide your restful service endpoint to the url field.</p>
+<p> The advantage of using ajax is 1) it is excuted immediately after html is loaded and it is synchronized.</p>
+</li>
+<li><p>Using code block<br> The above code behind can also be called be embedding the following line into your javascript part of the page:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var message = &quot;&lt;% GetStatus() %&gt;&quot;;</div></pre></td></tr></table></figure>
+<p> Note that by default the evaluated return for a code behind function does not include quotes, so if it is a string type, you have to add quotes manually.</p>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Here I am going to summarize commonly used ways to pass data between server and client. There are traditional ways along with some ASP.NET specific ways.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Technology" scheme="https://evertqin.github.io/blog/tags/Technology/"/>
+    
+      <category term="C#" scheme="https://evertqin.github.io/blog/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>C# and C++ Interop Demonstration</title>
     <link href="https://evertqin.github.io/blog/2015/08/03/post15/"/>
     <id>https://evertqin.github.io/blog/2015/08/03/post15/</id>
     <published>2015-08-03T04:00:00.000Z</published>
-    <updated>2017-06-26T16:50:18.011Z</updated>
+    <updated>2017-06-26T16:50:18.000Z</updated>
     
     <content type="html"><![CDATA[<p>One interesting feature of C# is that you can directly use unmanaged dlls from the managed code. There are different ways to do this, such as: 1) using a unsafe block and write unmanaged code directly. It is tested that the performance of these unmanaged codes is somewhate better than managed code. 2) use Marshall and dllimport from C# and dllexport from C++; 3) use 3rd party libraries such as swig.exe. Here I am going to introduce using dllimport because I think this is the most native way to deal with interop requirements.</p>
 <a id="more"></a>
@@ -865,142 +926,6 @@ The above function update the element text of the scope every second.
     <summary type="html">
     
       &lt;p&gt;One interesting feature of C# is that you can directly use unmanaged dlls from the managed code. There are different ways to do this, such as: 1) using a unsafe block and write unmanaged code directly. It is tested that the performance of these unmanaged codes is somewhate better than managed code. 2) use Marshall and dllimport from C# and dllexport from C++; 3) use 3rd party libraries such as swig.exe. Here I am going to introduce using dllimport because I think this is the most native way to deal with interop requirements.&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Technology" scheme="https://evertqin.github.io/blog/tags/Technology/"/>
-    
-      <category term="C#" scheme="https://evertqin.github.io/blog/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Transfering Data between ASP.NET Client and Server</title>
-    <link href="https://evertqin.github.io/blog/2015/08/03/post14/"/>
-    <id>https://evertqin.github.io/blog/2015/08/03/post14/</id>
-    <published>2015-08-03T04:00:00.000Z</published>
-    <updated>2017-06-26T16:50:17.988Z</updated>
-    
-    <content type="html"><![CDATA[<p>Here I am going to summarize commonly used ways to pass data between server and client. There are traditional ways along with some ASP.NET specific ways.</p>
-<a id="more"></a>
-<ol>
-<li><p>Ajax request, using jQuery Library, if you are using webforms, then:</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">  type: &quot;POST&quot;,</div><div class="line">  url: &quot;Analysis.aspx/getStatus&quot;,</div><div class="line">  data: &#123;&#125;,</div><div class="line">  contentType: &quot;application/json; charset=utf-8&quot;,</div><div class="line">  dataType: &quot;json&quot;,</div><div class="line">  success: function (message) &#123;</div><div class="line">    console.log(message);</div><div class="line">  &#125;,</div><div class="line">  error: function(xhr, status, error) &#123;</div><div class="line">    console.log(xhr);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p> In your code behind (Analysis.aspx.cs), you should have a public static method:</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">using System.Web.Services;</div><div class="line"></div><div class="line">[WebMethod]</div><div class="line">public static string GetStatus()</div><div class="line">&#123;</div><div class="line">  return this.message;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p> In MVC model, it is simpler because you only needs to provide your restful service endpoint to the url field.</p>
-<p> The advantage of using ajax is 1) it is excuted immediately after html is loaded and it is synchronized.</p>
-</li>
-<li><p>Using code block<br> The above code behind can also be called be embedding the following line into your javascript part of the page:</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var message = &quot;&lt;% GetStatus() %&gt;&quot;;</div></pre></td></tr></table></figure>
-<p> Note that by default the evaluated return for a code behind function does not include quotes, so if it is a string type, you have to add quotes manually.</p>
-</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Here I am going to summarize commonly used ways to pass data between server and client. There are traditional ways along with some ASP.NET specific ways.&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Technology" scheme="https://evertqin.github.io/blog/tags/Technology/"/>
-    
-      <category term="C#" scheme="https://evertqin.github.io/blog/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Combine WCF, ASP.NET, SignalR for event broadcasting (1)</title>
-    <link href="https://evertqin.github.io/blog/2015/07/29/post12/"/>
-    <id>https://evertqin.github.io/blog/2015/07/29/post12/</id>
-    <published>2015-07-29T04:00:00.000Z</published>
-    <updated>2017-06-26T16:50:17.965Z</updated>
-    
-    <content type="html"><![CDATA[<p>Previously, I introduced a way to broadcast logging events from log4net. Today I’m taking it a step forward by enabling event broadcasting on website.</p>
-<a id="more"></a>
-<p>In traditional desktop applications, such as WinForms, events handling is quite a breeze – For built in events like Timer.Elaspsed,  the only thing we need to do is to subscribe a delegate. However, when it comes to the web word, events handling is not that simple anymore. The reason is browser does not actively run and wait for events after the page is rendered, so there is no way to change the DOM except for by using frontend javascript. Also, regular ways to send data between frontend and backend, regardless whether it is a synchronized call or AJAX requires a series of actions, including open the socket, sending the request, process the request, send back response, close the socket. The whole process needs to open and close socket each time so it is not very efficient so it is ideal if we need real-time data.</p>
-<p>Luckily, there is a great technology called <a href="http://www.asp.net/signalr" target="_blank" rel="external">SignalR</a> that makes the real-time communication between ASP.NET frontend and backend much easier. What I am going to show here contains three components:</p>
-<h4 id="Create-dummy-business-logic"><a href="#Create-dummy-business-logic" class="headerlink" title="Create dummy business logic"></a>Create dummy business logic</h4><ol>
-<li><p>An assembly that mimic logging event generation from business logic.</p>
-</li>
-<li><p>A WCF service running in either interactive mode or as windows service. This is the backend service.</p>
-</li>
-<li><p>An ASP.NET website that calls the WCF service reference and receive logging events broadcasting all the way from the business logic.</p>
-</li>
-</ol>
-<p>Let’s start by creating the dummy business logic.</p>
-<ul>
-<li><p>Create an empty console application (we will change it to class library later but let’s make it console application first for easier debugging)</p>
-<p><img src="http://i.imgur.com/xFa0Sbc.png" alt="Create a Console Application"></p>
-</li>
-<li><p>Add log4net through NuGet</p>
-</li>
-<li><p>Create EventAppender, BroadcastEventArgs and BroadcastEvetnService as introduced in my previous blog post<a href="http://blog.tripplan.info/blog/post/item/4" target="_blank" rel="external">http://blog.tripplan.info/blog/post/item/4</a>.</p>
-</li>
-<li><p>Make a new folder called “Configs” and add log4net_config.xml to that folder, make sure for the line <code>&lt;appender name=&quot;EventAppender&quot; type=&quot;LogBroadcaster.Broadcast.EventAppender, LogBroadcaster&quot;&gt;</code>, you use the correct classes. For the type attribute, the field before comma should be the full reference path to the EventAppender, the field after comma should be the assembly name containing the EventAppender.</p>
-</li>
-<li><p>Add a new folder called “Test” and add a new class “TestRunner”</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">public class TestRunner</div><div class="line">&#123;</div><div class="line">    private static readonly ILog _log = LogManager.GetLogger(typeof (TestRunner));</div><div class="line"></div><div class="line">    private Timer timer;</div><div class="line"></div><div class="line">    public TestRunner()</div><div class="line">    &#123;</div><div class="line">        timer = new Timer();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public void GeneratingRandomLog()</div><div class="line">    &#123;</div><div class="line">        Random rand = new Random();</div><div class="line">        double interval = rand.NextDouble()*10000;</div><div class="line"></div><div class="line">        timer.Interval = interval;</div><div class="line">        timer.Elapsed +=</div><div class="line">            (sender, eventArgs) =&gt;</div><div class="line">            &#123;</div><div class="line">                _log.Warn(string.Format(&quot;This is a test. Now timer is &#123;0&#125;&quot;, eventArgs.SignalTime));</div><div class="line">            &#125;;</div><div class="line">        timer.Start();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>Add the following code snippet to Main function:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">TestRunner testRunner = new TestRunner();</div><div class="line">testRunner.GeneratingRandomLog();</div><div class="line"></div><div class="line">Console.ReadKey();</div></pre></td></tr></table></figure>
-<p>Now run the project, and you should see some dummy log messages scrolling in the console</p>
-<ul>
-<li>Change the project property to dll by changing Application -&gt; Output type to “Class Library”. Compile the dll.</li>
-</ul>
-<h4 id="Create-WCF-Service-and-enabling-asynchronous-callback"><a href="#Create-WCF-Service-and-enabling-asynchronous-callback" class="headerlink" title="Create WCF Service and enabling asynchronous callback"></a>Create WCF Service and enabling asynchronous callback</h4><p>Conventional client server modal is： client sends a request to server and wait for a response, after server processed the request, client get the response then unblock. This is one directional. A Duplex service is a pattern that both endpoints can send and receive messages to the other independently.</p>
-<ul>
-<li><p>Start by creating a console application(We could have started with WCF class library, but still, a console application is easier to debug during development)</p>
-</li>
-<li><p>Add a WCF service to the project (New Item… -&gt; WCF Service). Here I named my service “MyWcfService”. Visual Studio will automatically create IMyWcfService Interface and MyWcfService implementation.</p>
-</li>
-<li><p>To make the project more interesting, I am adding another interface “IMyWcfServiceAsync” to the project. The idea behind this is that I want to put all my asynchronous functions under a separate interface so I can add different ServiceContract Attributes to them. The project will look like the following figure.</p>
-<p><img src="http://i.imgur.com/rEVKRS4.png" alt="Create WCF console application"></p>
-</li>
-<li><p>Add the dll generated from last solution as reference..</p>
-</li>
-<li><p>Add ServiceContracts and OperationContracts to the interfaces and classes.</p>
-<ul>
-<li>IMyWcfService</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[ServiceContract]</div><div class="line">public interface IMyWcfService</div><div class="line">&#123;</div><div class="line">    [OperationContract]</div><div class="line">    void DoWork();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>IMyWcfServiceAsync</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">[ServiceContract(Namespace = &quot;mynamspace&quot;, SessionMode = SessionMode.Required)]</div><div class="line">public interface IClientCallback</div><div class="line">&#123;</div><div class="line">    [OperationContract]</div><div class="line">    void NotifyClient(string message);</div><div class="line">&#125;</div><div class="line"></div><div class="line">[ServiceContract(Namespace = &quot;mynamspace&quot;, SessionMode = SessionMode.Required,</div><div class="line">    CallbackContract = typeof (IClientCallback))]</div><div class="line">public interface IMyWcfServiceAsync</div><div class="line">&#123;</div><div class="line">    [OperationContract(IsOneWay = true)]</div><div class="line">    void ListenToEvents();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>  The most importand part is <code>[ServiceContract(Namespace = &quot;mynamspace&quot;, SessionMode = SessionMode.Required,
-      CallbackContract = typeof (IClientCallback))]</code> attribute. This tells that this ServiceContract is a asynchronous callback contract and the client to provide a implementation of IClientCallback interface.</p>
-<ul>
-<li>MyWcfService</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">using System.ServiceModel;</div><div class="line">using LogBroadcaster.Broadcast;</div><div class="line">using LogBroadcaster.Test;</div><div class="line"></div><div class="line">namespace MyWcfServiceHost</div><div class="line">&#123;</div><div class="line">    public class MyWcfService : IMyWcfService, IMyWcfServiceAsync</div><div class="line">    &#123;</div><div class="line">        public void DoWork()</div><div class="line">        &#123;</div><div class="line">            TestRunner testRunner = new TestRunner();</div><div class="line">            testRunner.GeneratingRandomLog();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        public void ListenToEvents()</div><div class="line">        &#123;</div><div class="line">            // this call back is only valid in the context of this function</div><div class="line">            var callback = OperationContext.Current.GetCallbackChannel&lt;IClientCallback&gt;();</div><div class="line"></div><div class="line">            BroadcastEventService.Instance.BroadcastEvent +=</div><div class="line">                (sender, eventArgs) =&gt; &#123; callback.NotifyClient(eventArgs.Message); &#125;;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ol>
-<li><p>Make a new folder called “Configs” and add log4net_config.xml to that forlder by copying from previous solution.</p>
-</li>
-<li><p>Rename <code>Program.cs</code> to “WcfServiceHost” (or a name of your choice) and replace its content with following code:</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">namespace MyWcfServiceHost</div><div class="line">&#123;</div><div class="line">    internal class WcfServiceHost : ServiceBase</div><div class="line">    &#123;</div><div class="line">        private static readonly Dictionary&lt;string, ServiceHost&gt; _ServiceHosts = new Dictionary&lt;string, ServiceHost&gt;();</div><div class="line"></div><div class="line">        public static ServiceHost GetService(string sSrvName)</div><div class="line">        &#123;</div><div class="line">            if (_ServiceHosts.ContainsKey(sSrvName)) return _ServiceHosts[sSrvName];</div><div class="line">            return null;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        public WcfServiceHost()</div><div class="line">        &#123;</div><div class="line">            this.ServiceName = &quot;MyWcfService&quot;;</div><div class="line">            Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        private static void RunInteractive(ServiceBase[] servicesToRun)</div><div class="line">        &#123;</div><div class="line">            Console.WriteLine(&quot;Services running in interactive mode.&quot;);</div><div class="line">            Console.WriteLine();</div><div class="line"></div><div class="line">            MethodInfo onStartMethod = typeof (ServiceBase).GetMethod(&quot;OnStart&quot;,</div><div class="line">                BindingFlags.Instance | BindingFlags.NonPublic);</div><div class="line">            foreach (ServiceBase service in servicesToRun)</div><div class="line">            &#123;</div><div class="line">                Console.Write(&quot;Starting &#123;0&#125;...&quot;, service.ServiceName);</div><div class="line">                ((WcfServiceHost) service).OnStart(new string[] &#123;&#125;);</div><div class="line">                //onStartMethod.Invoke(service, new object[] &#123; new string[] &#123; &#125; &#125;);</div><div class="line">                Console.Write(&quot;Started&quot;);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            Console.WriteLine();</div><div class="line">            Console.WriteLine();</div><div class="line">            Console.WriteLine(</div><div class="line">                &quot;Press any key to stop the services and end the process...&quot;);</div><div class="line">            Console.ReadKey();</div><div class="line">            Console.WriteLine();</div><div class="line"></div><div class="line">            MethodInfo onStopMethod = typeof (ServiceBase).GetMethod(&quot;OnStop&quot;,</div><div class="line">                BindingFlags.Instance | BindingFlags.NonPublic);</div><div class="line">            foreach (ServiceBase service in servicesToRun)</div><div class="line">            &#123;</div><div class="line">                Console.Write(&quot;Stopping &#123;0&#125;...&quot;, service.ServiceName);</div><div class="line">                //onStopMethod.Invoke(service, null);</div><div class="line">                ((WcfServiceHost) service).OnStop();</div><div class="line">                Console.WriteLine(&quot;Stopped&quot;);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            Console.WriteLine(&quot;All services stopped.&quot;);</div><div class="line">            // Keep the console alive for a second to allow the user to see the message.</div><div class="line">            Thread.Sleep(1000);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        protected int OpenAll()</div><div class="line">        &#123;</div><div class="line">            OpenHost&lt;MyWcfService&gt;();</div><div class="line">            return _ServiceHosts.Count();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        protected int CloseAll()</div><div class="line">        &#123;</div><div class="line">            foreach (ServiceHost serviceHost in _ServiceHosts.Values)</div><div class="line">            &#123;</div><div class="line">                try</div><div class="line">                &#123;</div><div class="line">                    serviceHost.Close(new TimeSpan(0, 0, 10));</div><div class="line">                &#125;</div><div class="line">                catch (Exception ex)</div><div class="line">                &#123;</div><div class="line">                    serviceHost.Abort();</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            _ServiceHosts.Clear();</div><div class="line">            return 0;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        protected void OpenHost&lt;T&gt;()</div><div class="line">        &#123;</div><div class="line">            Type type = typeof (T);</div><div class="line">            ServiceHost serviceHost = new ServiceHost(type);</div><div class="line">            serviceHost.Open();</div><div class="line">            _ServiceHosts[type.ToString()] = serviceHost;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        protected override void OnStart(string[] args)</div><div class="line">        &#123;</div><div class="line">            // eventlog.WriteEntry(&quot;AnalysisWindowsService started.&quot;);</div><div class="line">            this.CloseAll();</div><div class="line">            this.OpenAll();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        protected override void OnStop()</div><div class="line">        &#123;</div><div class="line">            this.CloseAll();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        private static void Main(string[] args)</div><div class="line">        &#123;</div><div class="line">            ServiceBase[] servicesToRun;</div><div class="line">            servicesToRun = new ServiceBase[]</div><div class="line">            &#123;</div><div class="line">                new WcfServiceHost()</div><div class="line">            &#125;;</div><div class="line">            if (Environment.UserInteractive)</div><div class="line">            &#123;</div><div class="line">                RunInteractive(servicesToRun);</div><div class="line">            &#125;</div><div class="line">            else</div><div class="line">            &#123;</div><div class="line">                Run(servicesToRun);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>Update the app.config</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line"></div><div class="line">&lt;configuration&gt;</div><div class="line">  &lt;system.serviceModel&gt;</div><div class="line">    &lt;behaviors&gt;</div><div class="line">      &lt;serviceBehaviors&gt;</div><div class="line">        &lt;behavior name=&quot;&quot;&gt;</div><div class="line">          &lt;serviceMetadata httpGetEnabled=&quot;false&quot; /&gt;</div><div class="line">          &lt;serviceDebug includeExceptionDetailInFaults=&quot;false&quot; /&gt;</div><div class="line">        &lt;/behavior&gt;</div><div class="line">      &lt;/serviceBehaviors&gt;</div><div class="line">      &lt;endpointBehaviors&gt;</div><div class="line">        &lt;behavior name=&quot;MyEndpointBehavior&quot;&gt;</div><div class="line">          &lt;dataContractSerializer maxItemsInObjectGraph=&quot;2147483646&quot; /&gt;</div><div class="line">        &lt;/behavior&gt;</div><div class="line">      &lt;/endpointBehaviors&gt;</div><div class="line">    &lt;/behaviors&gt;</div><div class="line"></div><div class="line">    &lt;bindings&gt;</div><div class="line">      &lt;netTcpBinding&gt;</div><div class="line">        &lt;binding name=&quot;BufferedNetTcpBindingConf&quot; receiveTimeout=&quot;16:10:00&quot; sendTimeout=&quot;16:10:00&quot;</div><div class="line">                 transferMode=&quot;Buffered&quot; maxBufferPoolSize=&quot;2147483647&quot; maxBufferSize=&quot;2147483647&quot;</div><div class="line">                 maxReceivedMessageSize=&quot;2147483647&quot;&gt;</div><div class="line">          &lt;readerQuotas maxArrayLength=&quot;2147483647&quot; /&gt;</div><div class="line">          &lt;security mode=&quot;None&quot; /&gt;</div><div class="line">        &lt;/binding&gt;</div><div class="line">      &lt;/netTcpBinding&gt;</div><div class="line">    &lt;/bindings&gt;</div><div class="line">    &lt;services&gt;</div><div class="line">      &lt;service name=&quot;MyWcfServiceHost.MyWcfService&quot;&gt;</div><div class="line">        &lt;endpoint address=&quot;&quot; behaviorConfiguration=&quot;MyEndpointBehavior&quot; binding=&quot;netTcpBinding&quot;  bindingConfiguration=&quot;BufferedNetTcpBindingConf&quot; contract=&quot;MyWcfServiceHost.IMyWcfService&quot;&gt;</div><div class="line">          &lt;identity&gt;</div><div class="line">            &lt;dns value=&quot;localhost&quot; /&gt;</div><div class="line">          &lt;/identity&gt;</div><div class="line">        &lt;/endpoint&gt;</div><div class="line">        &lt;endpoint address=&quot;&quot; behaviorConfiguration=&quot;MyEndpointBehavior&quot; binding=&quot;netTcpBinding&quot; bindingConfiguration=&quot;BufferedNetTcpBindingConf&quot; contract=&quot;MyWcfServiceHost.IMyWcfServiceAsync&quot;&gt;</div><div class="line">          &lt;identity&gt;</div><div class="line">            &lt;dns value=&quot;localhost&quot; /&gt;</div><div class="line">          &lt;/identity&gt;</div><div class="line">        &lt;/endpoint&gt;</div><div class="line">        &lt;endpoint address=&quot;mex&quot; binding=&quot;mexTcpBinding&quot; name=&quot;MexTcpBindingEndpoint&quot; contract=&quot;IMetadataExchange&quot; /&gt;</div><div class="line">        &lt;host&gt;</div><div class="line">          &lt;baseAddresses&gt;</div><div class="line">            &lt;add baseAddress=&quot;net.tcp://localhost:8733/MyWcfService/&quot; /&gt;</div><div class="line">          &lt;/baseAddresses&gt;</div><div class="line">        &lt;/host&gt;</div><div class="line">      &lt;/service&gt;</div><div class="line">    &lt;/services&gt;</div><div class="line">  &lt;/system.serviceModel&gt;</div><div class="line">  &lt;startup&gt;</div><div class="line">    &lt;supportedRuntime version=&quot;v4.0&quot; sku=&quot;.NETFramework,Version=v4.5&quot; /&gt;</div><div class="line">  &lt;/startup&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure>
-<p>  I am creating two endpoints for two of my interfaces. Also, I am setting “maxReceivedMessageSize” to max, although it is not necessary in this application. Also I am using net+tcp here. You can also use dualHttp binding, check the article here <a href="https://msdn.microsoft.com/en-us/library/ms731064(v=vs.110" target="_blank" rel="external">Duplex Service</a>.aspx)</p>
-<p>  The above code will enable this wcf to run either under interactive mode or run as windows service. Hit F5 and you should be able to see the following screen.</p>
-<p>  <img src="http://i.imgur.com/rPUtRF3.png" alt="WCF service successfully run under interactive mode"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Previously, I introduced a way to broadcast logging events from log4net. Today I’m taking it a step forward by enabling event broadcasting on website.&lt;/p&gt;
     
     </summary>
     
